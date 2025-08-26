@@ -1,0 +1,13 @@
+# Visual Studio / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+
+# Node.js
+node_modules/
+
+# Frontend vendor libraries
+wwwroot/lib/
