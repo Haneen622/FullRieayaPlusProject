@@ -1,0 +1,200 @@
+﻿@{
+    Layout = null;           // تعطيل الـ Layout
+    ViewData["Title"] = "emergency";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Contacts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="color-scheme" content="light dark" />
+    <style>
+        @@keyframes fadeIn {from {opacity:0; transform: translateY(6px);} to {opacity:1; transform: translateY(0);} }
+        .animate-fade-in { animation: fadeIn 0.45s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#7BCDF0] to-[#5fb8db] min-h-screen flex items-center justify-center p-4">
+    <main class="w-full max-w-3xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 animate-fade-in">
+        <!-- Header -->
+        <header class="flex items-center justify-between gap-4 mb-6">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0f3a4a] dark:text-white">Emergency Contacts</h1>
+                <p class="text-gray-600 dark:text-gray-300 mt-1">Add trusted people to contact in emergencies.</p>
+            </div>
+            <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#7BCDF0] hover:bg-[#65b9de] text-white shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7BCDF0]" aria-label="Back to profile">
+                <!-- back icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                Back
+            </a>
+        </header>
+
+        <!-- Form -->
+        <section aria-labelledby="formTitle" class="mb-8">
+            <h2 id="formTitle" class="text-xl font-semibold text-[#7BCDF0] mb-3">Add Contact</h2>
+            <form id="contactForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label class="block">
+                    <span class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</span>
+                    <input id="name" type="text" required minlength="2" placeholder="e.g., Ahmad Saleh" class="w-full rounded-xl border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-[#7BCDF0] focus:ring-[#7BCDF0] p-3" />
+                </label>
+
+                <label class="block">
+                    <span class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number</span>
+                    <input id="phone" type="tel" required inputmode="tel" placeholder="e.g., +962 7X XXX XXXX" pattern="^[+\d][\d ()-]{6,}$" class="w-full rounded-xl border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-[#7BCDF0] focus:ring-[#7BCDF0] p-3" />
+                    <small class="text-gray-500">Include country code if possible.</small>
+                </label>
+
+                <label class="block sm:col-span-2">
+                    <span class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Relationship</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <select id="relationship" class="w-full rounded-xl border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-[#7BCDF0] focus:ring-[#7BCDF0] p-3">
+                            <option value="Spouse">Spouse</option>
+                            <option value="Son/Daughter">Son/Daughter</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Neighbor">Neighbor</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Caregiver">Caregiver</option>
+                            <option value="Doctor">Doctor</option>
+                        </select>
+                        <input id="relationshipCustom" type="text" placeholder="Or type a custom relationship..." class="w-full rounded-xl border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-[#7BCDF0] focus:ring-[#7BCDF0] p-3" />
+                    </div>
+                </label>
+
+                <div class="sm:col-span-2 flex items-center justify-end gap-3 mt-2">
+                    <button type="reset" class="px-4 py-2 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100">Clear</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-[#7BCDF0] hover:bg-[#65b9de] text-white font-semibold shadow">Add</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- List -->
+        <section aria-labelledby="listTitle">
+            <h2 id="listTitle" class="text-xl font-semibold text-[#7BCDF0] mb-3">Saved Contacts</h2>
+            <div id="emptyState" class="rounded-xl border border-dashed border-[#7BCDF0] p-6 text-center text-gray-600 dark:text-gray-300">
+                No contacts yet. Add your first emergency contact above.
+            </div>
+            <ul id="contacts" class="mt-4 grid grid-cols-1 gap-3"></ul>
+        </section>
+    </main>
+
+    <template id="contactItemTpl">
+        <li class="flex items-start justify-between gap-3 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
+            <div class="min-w-0">
+                <p class="font-semibold text-gray-900 dark:text-gray-100 text-lg leading-6"><span data-field="name"></span></p>
+                <p class="text-gray-600 dark:text-gray-300"><span class="text-[#0f3a4a] font-medium">Phone:</span> <span data-field="phone"></span></p>
+                <p class="text-gray-600 dark:text-gray-300"><span class="text-[#0f3a4a] font-medium">Relationship:</span> <span data-field="relationship"></span></p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button class="editBtn inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#7BCDF0] hover:text-[#0f3a4a] shadow-sm" title="Edit" aria-label="Edit contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L6 11.172V14h2.828l8.586-8.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M4 16a2 2 0 002 2h8a2 2 0 002-2V9a1 1 0 112 0v7a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h7a1 1 0 010 2H6a2 2 0 00-2 2v10z" clip-rule="evenodd" /></svg>
+                </button>
+                <button class="deleteBtn inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#ffefef] text-red-700 hover:bg-red-100 border border-red-200" title="Delete" aria-label="Delete contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2h.293l.853 10.66A2 2 0 007.138 18h5.724a2 2 0 001.992-1.34L15.707 6H16a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zm-1 6a1 1 0 112 0v7a1 1 0 11-2 0V8zm5 0a1 1 0 112 0v7a1 1 0 11-2 0V8z" clip-rule="evenodd" /></svg>
+                </button>
+            </div>
+        </li>
+    </template>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const nameEl = document.getElementById('name');
+        const phoneEl = document.getElementById('phone');
+        const relSel = document.getElementById('relationship');
+        const relCustom = document.getElementById('relationshipCustom');
+        const list = document.getElementById('contacts');
+        const empty = document.getElementById('emptyState');
+
+        const STORAGE_KEY = 'emergency_contacts_v1';
+
+        function loadContacts(){
+          try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          } catch { return []; }
+        }
+        function saveContacts(contacts){
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
+        }
+
+        function currentRelationship(){
+          const custom = relCustom.value.trim();
+          return custom || relSel.value;
+        }
+
+        function render(){
+          const contacts = loadContacts();
+          list.innerHTML = '';
+          if(!contacts.length){ empty.classList.remove('hidden'); return; }
+          empty.classList.add('hidden');
+          const tpl = document.getElementById('contactItemTpl');
+          contacts.forEach((c, idx)=>{
+            const node = tpl.content.cloneNode(true);
+            node.querySelector('[data-field="name"]').textContent = c.name;
+            node.querySelector('[data-field="phone"]').textContent = c.phone;
+            node.querySelector('[data-field="relationship"]').textContent = c.relationship;
+            node.querySelector('.editBtn').addEventListener('click', ()=> startEdit(idx));
+            node.querySelector('.deleteBtn').addEventListener('click', ()=> remove(idx));
+            list.appendChild(node);
+          });
+        }
+
+        function add(contact){
+          const contacts = loadContacts();
+          contacts.push(contact);
+          saveContacts(contacts);
+          render();
+        }
+
+        function startEdit(index){
+          const contacts = loadContacts();
+          const c = contacts[index];
+          nameEl.value = c.name; phoneEl.value = c.phone;
+          relCustom.value = '';
+          const selOptions = Array.from(relSel.options).map(o=>o.value);
+          if(selOptions.includes(c.relationship)){
+            relSel.value = c.relationship; relCustom.value = '';
+          } else {
+            relSel.value = selOptions[0]; relCustom.value = c.relationship;
+          }
+          form.dataset.editIndex = index;
+          window.scrollTo({top:0, behavior:'smooth'});
+        }
+
+        function update(index, contact){
+          const contacts = loadContacts();
+          contacts[index] = contact;
+          saveContacts(contacts);
+          render();
+        }
+
+        function remove(index){
+          const contacts = loadContacts();
+          contacts.splice(index,1);
+          saveContacts(contacts);
+          render();
+        }
+
+        form.addEventListener('submit', (e)=>{
+          e.preventDefault();
+          if(!form.reportValidity()) return;
+          const contact = {
+            name: nameEl.value.trim(),
+            phone: phoneEl.value.trim(),
+            relationship: currentRelationship()
+          };
+          const idx = form.dataset.editIndex;
+          if(idx !== undefined){
+            update(parseInt(idx,10), contact);
+            delete form.dataset.editIndex;
+          } else {
+            add(contact);
+          }
+          form.reset();
+          relSel.value = 'Spouse';
+        });
+
+        // Initialize
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿@model IEnumerable<AdvSwProject.Models.MemoryPhoto>
+@{
+    Layout = null;   // نخليها مستقلة مثل صفحتك القديمة
+    ViewData["Title"] = "My Memories — Upload • View • Delete";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="color-scheme" content="light dark" />
+    <style>
+        @@keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.35s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#7BCDF0] to-[#5fb8db] min-h-screen p-4">
+    <main class="max-w-6xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 animate-fade-in">
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0f3a4a] dark:text-white">My Memories</h1>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                    Upload your photos, see them here, and delete what you don't need — stored in the database for your account.
+                </p>
+            </div>
+            <a asp-controller="Home" asp-action="Index"
+               class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#7BCDF0] hover:bg-[#65b9de] text-white shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Back
+            </a>
+        </div>
+
+        @if (TempData["Ok"] is string ok)
+        {
+            <div class="mb-4 rounded-xl bg-green-600/15 border border-green-500 px-4 py-2 text-green-900 dark:text-green-200">@ok</div>
+        }
+        @if (TempData["Err"] is string err)
+        {
+            <div class="mb-4 rounded-xl bg-red-600/15 border border-red-500 px-4 py-2 text-red-900 dark:text-red-200">@err</div>
+        }
+
+        <!-- Uploader (server-side form) -->
+        <section class="mb-6">
+            <form id="uploadForm" asp-controller="Memory" asp-action="Upload" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div id="dropZone"
+                     class="relative flex flex-col items-center justify-center p-8 border-2 border-dashed rounded-2xl
+                            bg-[#7BCDF0]/10 border-[#7BCDF0] hover:bg-[#7BCDF0]/20 transition cursor-pointer text-center">
+                    <input id="fileInput" name="file" type="file" accept=".png,.jpg,.jpeg,.webp"
+                           class="absolute inset-0 opacity-0 cursor-pointer" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-[#0f3a4a]" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M3 3a2 2 0 00-2 2v8a2 2 0 002 2h4l2 2 2-2h4a2 2 0 002-2V5a2 2 0 00-2-2H3z" />
+                    </svg>
+                    <p class="mt-2 text-gray-800 dark:text-gray-200 font-medium">Click to choose or drag & drop an image here</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Supports PNG / JPG / WebP</p>
+                </div>
+
+                <div class="mt-3 flex items-center gap-2">
+                    <input name="caption" id="captionInput" type="text" placeholder="Write a caption (optional)"
+                           class="flex-1 rounded-xl border border-gray-300 dark:border-gray-700 px-3 py-2 dark:bg-gray-800 dark:text-white" />
+                    <button type="submit"
+                            class="px-4 py-2 rounded-xl bg-[#7BCDF0] hover:bg-[#65b9de] text-white shadow">
+                        Upload
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Gallery (DB-backed) -->
+        <section>
+            @if (Model?.Any() == true)
+            {
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    @foreach (var p in Model)
+                    {
+                        <li class="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow">
+                            <img src="@p.FilePath" alt="memory" class="w-full h-64 object-cover" />
+                            <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent text-white flex items-center justify-between gap-2">
+                                <form asp-controller="Memory" asp-action="EditCaption" method="post" class="flex-1 flex items-center gap-2">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@p.Id" />
+                                    <input name="caption" value="@p.Caption"
+                                           class="bg-transparent border-0 outline-none w-full placeholder:text-white/70"
+                                           placeholder="Write a caption (optional)" />
+                                    <button type="submit"
+                                            class="px-3 py-1.5 rounded-lg bg-amber-500/90 hover:bg-amber-600 text-white text-sm">
+                                        Save
+                                    </button>
+                                </form>
+                                <form asp-controller="Memory" asp-action="Delete" method="post"
+                                      onsubmit="return confirm('Delete this photo?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@p.Id" />
+                                    <button type="submit"
+                                            class="px-3 py-1.5 rounded-lg bg-red-500/90 hover:bg-red-600 text-white text-sm">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="px-3 py-2 text-xs text-gray-600 dark:text-gray-300">
+                                Added @p.CreatedAt.ToLocalTime().ToString("g")
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <div class="rounded-xl border border-dashed border-[#7BCDF0] p-8 text-center text-gray-600 dark:text-gray-300 mt-4">
+                    No photos yet — add your first one from the box above.
+                </div>
+            }
+        </section>
+    </main>
+
+    <script>
+        // تحسينات صغيرة للـ drag & drop (ترفعي صورة واحدة لكل مرّة)
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+
+        ['dragenter', 'dragover'].forEach(ev =>
+            dropZone.addEventListener(ev, e => { e.preventDefault(); dropZone.classList.add('ring-2', 'ring-[#7BCDF0]'); })
+        );
+        ['dragleave', 'drop'].forEach(ev =>
+            dropZone.addEventListener(ev, e => { e.preventDefault(); dropZone.classList.remove('ring-2', 'ring-[#7BCDF0]'); })
+        );
+        dropZone.addEventListener('drop', e => {
+            const file = e.dataTransfer.files?.[0];
+            if (file) {
+                fileInput.files = e.dataTransfer.files;
+            }
+        });
+    </script>
+</body>
+</html>

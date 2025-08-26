@@ -1,0 +1,106 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/mystyles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 30px;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- العنوان  -->
+    <div class="zigzag">
+
+        <div style="--i: 0;"><span><b>🥗</b></span></div>
+        <div style="--i: 1;"><span><b>Healthy</b></span></div>
+        <div style="--i: 2;"><span><b>Eating</b></span></div>
+        <div style="--i: 3;"><span><b>Guide</b></span></div>
+
+    </div>
+
+    <div class="zigzag">
+
+        <div style="--i: 0;"></div>
+        <div style="--i: 1;"></div>
+        <div style="--i: 2;"></div>
+        <div style="--i: 3;"></div>
+
+    </div>
+    <!-- نهاية العنوان -->
+
+    <div class="container">
+
+        <a asp-controller="Health" asp-action="wasafat">
+            <div class="box">
+
+                <div class="content">
+                    <h2>Healthy Recipes 🍽</h2>
+                    <p>Explore a variety of nutritious recipes tailored to your preferences and health needs</p>
+
+                </div>
+
+                <span></span>
+            </div>
+        </a>
+
+        <a asp-controller="Health" asp-action="badael">
+            <div class="box">
+
+                <div class="content">
+
+                    <h2>Healthy Substitutes 🍽</h2>
+                    <p>Discover natural and wholesome alternatives for commonly used ingredients</p>
+
+                </div>
+
+                <span></span>
+
+            </div>
+        </a>
+
+        
+            <a asp-controller="Health" asp-action="hasasea">
+            <div class="box">
+
+                <div class="content">
+
+                    <h2>Allergy Substitutes 🍽</h2>
+                    <p>Find safe alternatives for ingredients that may cause allergies</p>
+
+                </div>
+
+                <span></span>
+
+            </div>
+        </a>
+
+    </div>
+
+    <script src="~/js/myscripts.js"></script>
+
+</body>
+</html>

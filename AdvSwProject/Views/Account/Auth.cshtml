@@ -1,0 +1,226 @@
+﻿@* @model AdvSwProject.ViewModels.UserViewmodel
+@{
+    ViewData["Title"] = "Auth";
+    Layout = "_Layout";
+    var form = (ViewData["Form"] as string) ?? "login";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+}
+
+@if (TempData["Ok"] is string okMsg)
+{
+    <div class="alert alert-success">@okMsg</div>
+}
+
+<div class="container">
+    <!-- LOGIN FORM -->
+    <div class="form-box login @(form == "login" ? "" : "hidden")">
+        <form asp-controller="Account" asp-action="Login" method="post" novalidate>
+            @Html.AntiForgeryToken()
+            <h1>LOGIN</h1>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+            <div class="input-box">
+                <input asp-for="Email" type="email" placeholder="Email" class="form-control" autocomplete="email" required />
+                <i class="bx bxs-envelope"></i>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Password" type="password" placeholder="Password" class="form-control" autocomplete="current-password" required />
+                <i class="bx bxs-lock-alt"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3" style="display:flex;align-items:center;gap:.5rem">
+                <input type="checkbox" id="RememberMe" name="RememberMe" value="true" />
+                <label for="RememberMe" style="margin:0">Remember me</label>
+            </div>
+
+            <button type="submit" class="btn">LOGIN</button>
+        </form>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div class="form-box register @(form == "signup" ? "" : "hidden")">
+        <form asp-controller="Account" asp-action="Signup" method="post" novalidate>
+            @Html.AntiForgeryToken()
+            <h1>SIGNUP</h1>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+            <div class="input-box">
+                <input asp-for="Username" placeholder="Username" class="form-control" required />
+                <i class="bx bxs-user"></i>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Email" type="email" placeholder="Email" class="form-control" autocomplete="email" required />
+                <i class="bx bxs-envelope"></i>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Password" type="password" placeholder="Password" class="form-control" autocomplete="new-password" required />
+                <i class="bx bxs-lock-alt"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn">SIGNUP</button>
+        </form>
+    </div>
+ *@
+    <!-- TOGGLE PANEL -->
+    @* <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+            <h1>HELLO!</h1>
+            <p>Don't have an account?</p>
+            <a class="btn register-btn" href="@Url.Action("Auth", "Account", new { form = "signup" })">SIGN UP</a>
+        </div>
+        <div class="toggle-panel toggle-right">
+            <h1>WELCOME BACK!</h1>
+            <p>Already have an account?</p>
+            <a class="btn login-btn" href="@Url.Action("Auth", "Account", new { form = "login" })">LOGIN</a>
+        </div>
+    </div> *@
+ @*    <div class="toggle-box">
+    <div class="toggle-panel toggle-left">
+        <h1>HELLO!</h1>
+        <p>Don't have an account?</p>
+        <a asp-controller="Account" asp-action="Auth" asp-route-form="signup" class="btn register-btn">SIGN UP</a>
+    </div>
+    <div class="toggle-panel toggle-right">
+        <h1>WELCOME BACK!</h1>
+        <p>Already have an account?</p>
+        <a asp-controller="Account" asp-action="Auth" asp-route-form="login" class="btn login-btn">LOGIN</a>
+    </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+ *@
+
+@model AdvSwProject.ViewModels.UserViewmodel
+@{
+    ViewData["Title"] = "Auth";
+    Layout = "_Layout";
+
+    // نحدد أي فورم ينعرض
+    var form = (ViewData["Form"] as string)?.ToLowerInvariant() ?? "login";
+    var isSignup = form == "signup";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    @* fallback بسيط في حال ما تحمل style.css لأي سبب *@
+    @if (isSignup)
+    {
+        <style>
+            .container.active .form-box.register {
+                visibility: visible;
+            }
+        </style>
+    }
+}
+
+@if (TempData["Ok"] is string okMsg)
+{
+    <div class="alert alert-success">@okMsg</div>
+}
+
+<!-- ملاحظة: كلاس active ينضاف تلقائياً لما form=signup -->
+<div class="container @(isSignup ? "active" : "")">
+
+    <!-- LOGIN FORM -->
+    <div class="form-box login">
+        <form asp-controller="Account" asp-action="Login" method="post" novalidate>
+            @Html.AntiForgeryToken()
+            <h1>LOGIN</h1>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+            <div class="input-box">
+                <input asp-for="Email" type="email" placeholder="Email" class="form-control" autocomplete="email" required />
+                <i class="bx bxs-envelope"></i>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Password" type="password" placeholder="Password" class="form-control" autocomplete="current-password" required />
+                <i class="bx bxs-lock-alt"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3" style="display:flex;align-items:center;gap:.5rem">
+                <input type="checkbox" id="RememberMe" name="RememberMe" value="true" />
+                <label for="RememberMe" style="margin:0">Remember me</label>
+            </div>
+
+            <button type="submit" class="btn">LOGIN</button>
+        </form>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div class="form-box register">
+        <form asp-controller="Account" asp-action="Signup" method="post" novalidate>
+            @Html.AntiForgeryToken()
+            <h1>SIGNUP</h1>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+            <div class="input-box">
+                <input asp-for="Username" placeholder="Username" class="form-control" required />
+                <i class="bx bxs-user"></i>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Email" type="email" placeholder="Email" class="form-control" autocomplete="email" required />
+                <i class="bx bxs-envelope"></i>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="input-box">
+                <input asp-for="Password" type="password" placeholder="Password" class="form-control" autocomplete="new-password" required />
+                <i class="bx bxs-lock-alt"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn">SIGNUP</button>
+        </form>
+    </div>
+
+    <!-- TOGGLE PANEL -->
+    <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+            <h1>HELLO!</h1>
+            <p>Don't have an account?</p>
+            <a asp-controller="Account" asp-action="Auth" asp-route-form="signup" class="btn register-btn">SIGN UP</a>
+        </div>
+        <div class="toggle-panel toggle-right">
+            <h1>WELCOME BACK!</h1>
+            <p>Already have an account?</p>
+            <a asp-controller="Account" asp-action="Auth" asp-route-form="login" class="btn login-btn">LOGIN</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\duaaimage.jpg" />
+    <None Include="wwwroot\images\madeenah.mp4" />
+    <None Include="wwwroot\images\makkafirstpage.jpg" />
+    <None Include="wwwroot\images\makkah.mp4" />
+    <None Include="wwwroot\images\masaimage.jpg" />
+    <None Include="wwwroot\images\nawmimage.jpg" />
+    <None Include="wwwroot\images\quranimage.jpg" />
+    <None Include="wwwroot\images\sabahimage.jpg" />
+    <None Include="wwwroot\images\thekerimage.jpg" />
+    <None Include="wwwroot\js\script.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="javascript\" />
+    <Folder Include="media\images\" />
+    <Folder Include="media\videos\" />
+  </ItemGroup>
+
+</Project>

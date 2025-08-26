@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment - Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-blue': '#7BCDF0',
+                        'soft-pink': '#EB3B8C'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gradient-to-br from-soft-blue/30 to-blue-100 text-gray-800 min-h-screen">
+
+    <!-- Header -->
+    <div class="container mx-auto px-4 py-8 sm:py-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-soft-pink mb-8 sm:mb-12">
+            🎶 Welcome to the Music Page 🎶
+        </h1>
+
+        <!-- Audio Tracks Section -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-8 sm:mb-12 max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-center text-soft-pink mb-6 sm:mb-8">
+                🎵 Relaxation Music
+            </h2>
+            <div class="space-y-4 sm:space-y-6">
+                <div class="bg-gray-50 rounded-xl p-4 sm:p-6 border border-gray-100">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3">Relaxing Piano Music</h3>
+                    <audio controls class="w-full h-10 sm:h-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-soft-blue">
+                        <source src="~/images/relaxing-piano-music-345081.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-4 sm:p-6 border border-gray-100">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3">Lo-Fi Chill</h3>
+                    <audio controls class="w-full h-10 sm:h-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-soft-blue">
+                        <source src="~/images/lofi-lofi-song-345371.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Embed Section -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-8 sm:mb-12 max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-center text-soft-pink mb-6 sm:mb-8">
+                📼 Classic Oldies Playlist
+            </h2>
+            <div class="relative w-full" style="padding-bottom: 56.25%;">
+                <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-md"
+                        src="https://www.youtube.com/embed/3P4XB3bM9iA?si=8DEI7kmx8FlgJU4w"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Spotify Embed Section -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-8 sm:mb-12 max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-center text-soft-pink mb-6 sm:mb-8">
+                🎷 Smooth Jazz Playlist
+            </h2>
+            <div class="bg-gray-50 rounded-xl p-4 sm:p-6 border border-gray-100">
+                <iframe class="w-full rounded-xl shadow-sm"
+                        style="height: 352px; min-height: 300px;"
+                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXbITWG1ZJKYt?utm_source=generator"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center pt-8 pb-4">
+            <p class="text-gray-600 text-sm sm:text-base">
+                Enjoy your musical journey! 🎼
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

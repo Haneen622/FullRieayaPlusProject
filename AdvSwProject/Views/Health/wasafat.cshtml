@@ -1,0 +1,723 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/mystyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /*  يخلي العناصر فوق بعض */
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            gap: 30px; /* مسافة بين الشريط والكروت */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .p {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2EAC9
+        }
+
+        @@media (prefers-color-scheme: dark) {
+            .p
+
+        {
+            background-color: #2C2C2C; /* خلفية داكنة */
+            color: #eee;
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li>
+                <a href="#" onclick="showSection('Vegan', event)">
+                    <span>Vegan</span>
+                    <span>Vegan</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('High-Protein', event)">
+                    <span>High-Protein</span>
+                    <span>High-Protein</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('Low-Calorie', event)">
+                    <span>Low-Calorie</span>
+                    <span>Low-Calorie</span>
+                </a>
+            <li>
+                <a href="#" onclick="showSection('Keto', event)">
+                    <span>Keto</span>
+                    <span>Keto</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('Drinks', event)">
+                    <span>Drinks</span>
+                    <span>Drinks</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('Health-Boosting', event)">
+                    <span>Health-Boosting</span>
+                    <span>Health-Boosting</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('Breakfast', event)">
+                    <span>Breakfast</span>
+                    <span>Breakfast</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('Favorites', event)">
+                    <span>Favorites</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <p>Choose a category from the menu above and explore a variety of recipes based on your preferences ⇪</p>
+
+    <div class="section">
+
+        <!-- الدائرتين -->
+
+        <div class="cards-container">
+            <div class="square">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="circontent">
+                    <h2>EatingWell</h2>
+                    <p style="text-align: center; font-family: 'Cairo', sans-serif;
+">For more healthy recipes and easy meal plans :</p>
+                    <a href="https://www.eatingwell.com">click here</a>
+                </div>
+            </div>
+
+            <div class="square">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="circontent">
+                    <h2>Rainbow Plant Life</h2>
+                    <p style="text-align: center; font-family: 'Cairo', sans-serif;
+">For more plant-based recipes :</p>
+                    <a href="https://rainbowplantlife.com/category/recipes/vegan-condiments-sauces/">click here</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- قسم ال vegan  -->
+    <div id="Vegan" class="section" style="display: none;">
+
+        <div class="mycard" data-id="1">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Vegan (Egg-Free & Dairy-Free)</h1>
+                <i class="meta-item">Vegan</i>
+                <i class="meta-item">Egg-free and Dairy-free</i>
+                <p class="info">100% plant-based recipes with no dairy or eggs</p>
+            </div>
+            <a href="https://share.google/pFYsUJsUIq5uGKpZm" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="2">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Low-Calorie Vegan Recipes</h1>
+                <i class="meta-item">Vegan</i>
+                <i class="meta-item">Low-calorie</i>
+                <p class="info">Light vegan meals perfect for a diet</p>
+            </div>
+            <a href="https://earthtoveg.com/category/recipe/300cal/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="3">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">High-Protein Vegan</h1>
+                <i class="meta-item">Vegan</i>
+                <i class="meta-item">High-protein</i>
+                <p class="info">Protein-rich vegan meals for energy and activity</p>
+            </div>
+            <a href="https://rainbowplantlife.com/20-minute-high-protein-vegan-meals/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="4">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Gluten-Free Vegan</h1>
+                <i class="meta-item">Vegan</i>
+                <i class="meta-item">Gluten-free</i>
+                <p class="info">Vegan recipes suitable for those with gluten sensitivity</p>
+            </div>
+            <a href="https://rainbowplantlife.com/vegan-gluten-free-recipes/" class="btn">Let's Cook!</a>
+        </div>
+    </div>
+    <!-- End of Vegan Section  -->
+    <!-- High-Protein Section  -->
+    <div id="High-Protein" class="section" style="display: none;">
+
+        <div class="mycard" data-id="5">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">High-Protein Desserts</h1>
+                <i class="meta-item">High-protein</i>
+                <i class="meta-item">Desserts</i>
+                <p class="info">Delicious desserts packed with protein</p>
+            </div>
+            <a href="https://terianncarty.com/high-protein-desserts/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="6">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">High-Protein Lunch</h1>
+                <i class="meta-item">High-protein</i>
+                <i class="meta-item">Lunch</i>
+                <p class="info">Protein-rich lunch dishes to fuel your day</p>
+            </div>
+            <a href="https://www.eatingwell.com/high-protein-lunch-recipes-to-make-forever-8712494" class="btn">Let's Cook!</a>
+        </div>
+
+
+        <div class="mycard" data-id="7">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">High-Protein Dinner</h1>
+                <i class="meta-item">High-protein</i>
+                <i class="meta-item">Dinner</i>
+                <p class="info">Healthy dinner dishes packed with protein</p>
+            </div>
+            <a href="https://www.eatingwell.com/low-carb-high-protein-25-minute-dinner-recipes-11790376" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="8">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Protein-Packed Breakfast</h1>
+                <i class="meta-item">High-protein</i>
+                <i class="meta-item">Breakfast</i>
+                <p class="info">Breakfast meals that provide lasting energy and protein</p>
+            </div>
+            <a href="#" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="9">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Gluten-Free</h1>
+                <i class="meta-item">High-protein</i>
+                <i class="meta-item">Gluten-free</i>
+                <p class="info">High-protein recipes suitable for those with gluten sensitivity</p>
+            </div>
+            <a href="https://iowagirleats.com/gluten-free-and-high-protein-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="10">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Low-Fat</h1>
+                <i class="meta-item">High-protein</i>
+                <i class="meta-item">Low-fat</i>
+                <p class="info">High-protein meals with reduced fat for a healthy balance</p>
+            </div>
+            <a href="https://www.eatingwell.com/gallery/7835714/high-protein-low-calorie-dinner-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+    </div>
+    <!-- End of High-Protein Section  -->
+    <!-- Low-Calorie Section  -->
+    <div id="Low-Calorie" class="section" style="display: none;">
+
+        <div class="mycard" data-id="11">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Low-Calorie Snacks</h1>
+                <i class="meta-item">Low-calorie</i>
+                <i class="meta-item">Snacks</i>
+                <p class="info">Snacks and light dishes perfect for daily dieting</p>
+            </div>
+            <a href="https://www.bbc.co.uk/food/collections/low-calorie_recipes" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="12">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Gluten-Free</h1>
+                <i class="meta-item">Low-calorie</i>
+                <i class="meta-item">Gluten-free</i>
+                <p class="info">Low-calorie recipes suitable for those with gluten sensitivity</p>
+            </div>
+            <a href="https://blog.myfitnesspal.com/12-gluten-free-weeknight-dinners-under-400-calories/" class="btn">Let's Cook!</a>
+        </div>
+    </div>
+    <!-- End of Low-Calorie Section  -->
+    <!-- قسم ال keto  -->
+    <div id="Keto" class="section" style="display: none;">
+
+        <div class="mycard" data-id="13">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Keto Breakfast</h1>
+                <i class="meta-item">Keto</i>
+                <i class="meta-item">breakfast</i>
+                <p class="info">Low-carb breakfast recipes rich in healthy fats</p>
+            </div>
+            <a href="https://www.delish.com/cooking/g4806/keto-breakfast/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="14">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Keto Lunch</h1>
+                <i class="meta-item">Keto</i>
+                <i class="meta-item">lunch</i>
+                <p class="info">Keto-friendly lunch dishes with low-carb ingredients</p>
+            </div>
+            <a href="https://www.delish.com/cooking/nutrition/g28229401/keto-lunch-ideas/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="15">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Keto Dinner</h1>
+                <i class="meta-item">Keto</i>
+                <i class="meta-item">dinner</i>
+                <p class="info">Healthy and balanced dinner ideas for keto diet</p>
+            </div>
+            <a href="https://www.delish.com/cooking/g4798/easy-keto-diet-dinner-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="16">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Egg-Free Keto</h1>
+                <i class="meta-item">Keto</i>
+                <i class="meta-item">egg-free</i>
+                <p class="info">Plant-based keto meals without eggs</p>
+            </div>
+            <a href="https://meatfreeketo.com/tag/egg-free/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="17">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Nut-Free Keto</h1>
+                <i class="meta-item">Keto</i>
+                <i class="meta-item">nut-free</i>
+                <p class="info">Keto recipes without nuts for allergy-friendly meals</p>
+            </div>
+            <a href="https://peaceloveandlowcarb.com/category/nut-free/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="18">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Dairy-Free Keto</h1>
+                <i class="meta-item">Keto</i>
+                <i class="meta-item">dairy-free</i>
+                <p class="info">Keto meals without milk or dairy products</p>
+            </div>
+            <a href="https://peaceloveandlowcarb.com/category/dairy-free/" class="btn">Let's Cook!</a>
+        </div>
+
+    </div>
+    <!-- نهاية قسم ال keto  -->
+    <!-- قسم ال drinks  -->
+    <div id="Drinks" class="section" style="display: none;">
+
+        <div class="mycard" data-id="19">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Green Drink</h1>
+                <i class="meta-item">drinks</i>
+                <i class="meta-item">Green drinks</i>
+                <p class="info">Fresh vegetable-based juice</p>
+            </div>
+            <a href="https://www.allrecipes.com/recipe/230642/healthy-green-juice/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="20">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Sugar-Free Drinks</h1>
+                <i class="meta-item">drinks</i>
+                <i class="meta-item">Sugar-free</i>
+                <p class="info">Beverages with no added sugar for better health</p>
+            </div>
+            <a href="https://food.ndtv.com/food-drinks/sugar-free-summer-drinks-that-are-delicious-and-healthy-recipes-inside-3998143" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="21">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Low-Calorie Drinks</h1>
+                <i class="meta-item">drinks</i>
+                <i class="meta-item">Low-calorie</i>
+                <p class="info">Light and low-calorie drinks for daily diet</p>
+            </div>
+            <a href="https://www.eatingwell.com/recipes/18430/low-calorie/drinks/" class="btn">Let's Cook!</a>
+        </div>
+    </div>
+    <!-- نهاية قسم ال drinks  -->
+    <!-- قسم ال health boosting  -->
+    <div id="Health-Boosting" class="section" style="display: none;">
+
+        <div class="mycard" data-id="22">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Immune-Boosting</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Immune-boosting</i>
+                <p class="info">Recipes that support a stronger immune system</p>
+            </div>
+            <a href="https://www.everydayhealth.com/diet-nutrition/recipes-that-can-help-strengthen-your-immune-system/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="23">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Heart-Healthy</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Heart-strengthening</i>
+                <p class="info">Meals that benefit heart and cardiovascular health</p>
+            </div>
+            <a href="https://www.momskitchenhandbook.com/20-tasty-heart-healthy-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="24">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Chronic Disease Prevention</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Chronic disease prevention</i>
+                <p class="info">Foods that help reduce chronic disease risks</p>
+            </div>
+            <a href="https://opentextbooks.library.arizona.edu/culinarymedicine/back-matter/appendix-b-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="25">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Sugar-Free Recipes</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Sugar-free</i>
+                <p class="info">Health-boosting meals with no added sugar</p>
+            </div>
+            <a href="https://www.eatingwell.com/gallery/7594585/30-days-no-sugar-added-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="26">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Gluten-Free Recipes</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Gluten-free</i>
+                <p class="info">Healthy meals without gluten to prevent allergies</p>
+            </div>
+            <a href="https://sweetsavoryandsteph.com/category/dietary-preference/gluten-free-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="27">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Oil-Free Recipes</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Oil-free</i>
+                <p class="info">Low-fat, oil-free recipes for better health</p>
+            </div>
+            <a href="https://ohsheglows.com/categories/recipes-2/food-allergies/allergies-oil-free/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="28">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Dairy-Free Recipes</h1>
+                <i class="meta-item">Health Boost</i>
+                <i class="meta-item">Dairy-free</i>
+                <p class="info">Healthy dishes without milk or dairy products</p>
+            </div>
+            <a href="https://makeitdairyfree.com/" class="btn">Let's Cook!</a>
+        </div>
+
+    </div>
+    <!-- نهاية قسم ال health boosting  -->
+    <!-- قسم ال Breakfast   -->
+    <div id="Breakfast" class="section" style="display: none;">
+
+        <div class="mycard" data-id="29">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Sugar-free</h1>
+                <i class="meta-item">Breakfast</i>
+                <i class="meta-item">Sugar-free</i>
+                <p class="info">Healthy breakfast with no added sugar</p>
+            </div>
+            <a href="https://www.everydayhealth.com/healthy-recipes/easy-no-added-sugar-breakfast-recipes/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="30">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Low-calorie</h1>
+                <i class="meta-item">Breakfast</i>
+                <i class="meta-item">Low-calorie</i>
+                <p class="info">Light breakfast meals suitable for diet</p>
+            </div>
+            <a href="https://www.eatingwell.com/low-calorie-5-minute-breakfast-recipes-8784541" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="31">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Egg-free</h1>
+                <i class="meta-item">Breakfast</i>
+                <i class="meta-item">Egg-free</i>
+                <p class="info">Breakfast recipes without eggs</p>
+            </div>
+            <a href="https://www.tasteofhome.com/collection/breakfast-ideas-without-eggs/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="32">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Gluten-free</h1>
+                <i class="meta-item">Breakfast</i>
+                <i class="meta-item">Gluten-free</i>
+                <p class="info">Breakfast suitable for people with gluten allergy</p>
+            </div>
+            <a href="https://bojongourmet.com/gluten-free-breakfast-recipe-ideas/" class="btn">Let's Cook!</a>
+        </div>
+
+        <div class="mycard" data-id="33">
+            <div class="header">
+                <div class="icon">
+                    <a href="#" class="fav-btn"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+            <div class="text">
+                <h1 class="food">Dairy-free</h1>
+                <i class="meta-item">Breakfast</i>
+                <i class="meta-item">Dairy-free</i>
+                <p class="info">Breakfast meals without any dairy products</p>
+            </div>
+            <a href="https://www.fannetasticfood.com/dairy-free-breakfast-ideas/" class="btn">Let's Cook!</a>
+        </div>
+
+    </div>
+    <!-- نهاية قسم ال Breakfast   -->
+    <!-- قسم المفضلة -->
+    <div id="Favorites" style="display: none; flex-direction: column; align-items: center; gap: 20px;">
+        <h2 style="text-align: center; width: 100%;">⭐ Favorites </h2>
+        <div class="favorites-grid">
+            <!-- البطاقات حتنضاف هون -->
+        </div>
+    </div>
+
+
+    <script>
+        // عند الضغط على قلب البطاقة
+        document.querySelectorAll(".fav-btn").forEach(btn => {
+          btn.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const card = btn.closest(".mycard"); // البطاقة الأصلية
+            const icon = btn.querySelector("i");
+        const favoritesGrid = document.querySelector("#Favorites .favorites-grid");
+
+            if (icon.classList.contains("fa-regular")) {
+              icon.classList.remove("fa-regular");
+              icon.classList.add("fa-solid");
+
+              // انسخ البطاقة وحطها في المفضلة
+              if (!card.dataset.favorited) { // تفادي التكرار
+                const clone = card.cloneNode(true);
+                favoritesGrid.appendChild(clone);
+                card.dataset.favorited = "true"; // علامة أنها مضافة
+              }
+            } else {
+              icon.classList.remove("fa-solid");
+              icon.classList.add("fa-regular");
+
+              // إزالة من المفضلة
+        const clones = favoritesGrid.querySelectorAll(".mycard");
+        clones.forEach(c => {
+          if (c.dataset.id === card.dataset.id) {
+            favoritesGrid.removeChild(c);
+            card.dataset.favorited = "";
+          }
+        });
+            }
+          });
+        });
+
+        // اظهار الأقسام بدون إعادة تحميل
+        function showSection(sectionId, e) {
+          e.preventDefault();
+          const sections = document.querySelectorAll('.section');
+          sections.forEach(sec => sec.style.display = 'none');
+
+          const target = document.getElementById(sectionId);
+          if(target) target.style.display = 'grid';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/mystyles.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        .bg {
+            background-image: url("/images/badeelcover.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(8px);
+            -webkit-filter: blur(2px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* يخليه خلف المحتوى */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #BB8588;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        p {
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            width: fit-content;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        @@media (prefers-color-scheme: dark) {
+            body
+
+        {
+            background-color: #121212; /* خلفية داكنة عامة */
+            color: #eee;
+        }
+
+        .bg {
+            filter: blur(8px) brightness(0.5);
+            -webkit-filter: blur(2px) brightness(0.5);
+        }
+
+        h1 {
+            color: #FFD7A0; /* لون فاتح للنص */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        }
+
+        .p {
+            color: #eee;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="content">
+
+        <h1>🌿 Ingredient Substitutes</h1>
+        <p>Click on an ingredient to discover its healthy alternatives ⤵</p>
+
+        <div class="bgrid">
+            <!-- Sugar -->
+            <div class="bcard" onclick="toggleAlt(this)">
+                <h2>🍬 Sugar</h2>
+                <div class="alternatives">
+                    <div class="alt green">Stevia - Natural, almost zero calories</div>
+                    <div class="alt green">Erythritol - Low-calorie, does not raise blood sugar</div>
+                    <div class="alt yellow">Xylitol - Good for teeth but may cause gas</div>
+                    <div class="alt orange">Agave Syrup - High in fructose</div>
+                    <div class="alt yellow">Honey - Natural but high in sugar</div>
+                </div>
+            </div>
+
+            <!-- Butter -->
+            <div class="bcard" onclick="toggleAlt(this)">
+                <h2>🧈 Butter / Fats</h2>
+                <div class="alternatives">
+                    <div class="alt green">Olive Oil - Heart-healthy</div>
+                    <div class="alt green">Avocado Oil - Healthy and good for cooking</div>
+                    <div class="alt yellow">Coconut Oil - Natural saturated fat</div>
+                    <div class="alt orange">Margarine - Less healthy than natural oils</div>
+                    <div class="alt red">Butter - High in saturated fat</div>
+                </div>
+            </div>
+
+            <!-- Milk -->
+            <div class="bcard" onclick="toggleAlt(this)">
+                <h2>🥛 Milk / Dairy</h2>
+                <div class="alternatives">
+                    <div class="alt green">Almond Milk Unsweetened - Low in calories</div>
+                    <div class="alt yellow">Oat Milk - Contains natural sugar</div>
+                    <div class="alt yellow">Soy Milk - Good protein source</div>
+                    <div class="alt red">Cow Milk Full-fat - High in saturated fat</div>
+                    <div class="alt green">Lactose-Free Milk - Safe for lactose intolerance</div>
+                </div>
+            </div>
+
+            <!-- Flour -->
+            <div class="bcard" onclick="toggleAlt(this)">
+                <h2>🌾 Flour / Starches</h2>
+                <div class="alternatives">
+                    <div class="alt green">Whole Wheat Flour - High in fiber</div>
+                    <div class="alt green">Almond Flour - Low in carbs</div>
+                    <div class="alt yellow">Oat Flour - High in carbs</div>
+                    <div class="alt red">White Flour - Raises blood sugar quickly</div>
+                    <div class="alt green">Coconut Flour - High in fiber</div>
+                </div>
+            </div>
+        </div>
+        <!-- نظام الألوان -->
+        <!-- العنوان -->
+        <h2 class="btitle">Food Color Guide</h2>
+
+        <div class="legend-horizontal">
+            <div class="item">
+                <span class="dot green"></span>
+                <p><strong>Green</strong> = Very healthy / Can be consumed regularly</p>
+            </div>
+            <div class="item">
+                <span class="dot yellow"></span>
+                <p><strong>Yellow</strong> = Moderately healthy / Consume in moderation</p>
+            </div>
+            <div class="item">
+                <span class="dot orange"></span>
+                <p><strong>Orange</strong> = Caution advised / Limited consumption</p>
+            </div>
+            <div class="item">
+                <span class="dot red"></span>
+                <p><strong>Red</strong> = Unhealthy or high-risk / Very rare consumption</p>
+            </div>
+        </div>
+
+        <script>
+            function toggleAlt(card) {
+              let alt = card.querySelector(".alternatives");
+              alt.style.display = alt.style.display === "block" ? "none" : "block";
+            }
+        </script>
+</body>
+</html>

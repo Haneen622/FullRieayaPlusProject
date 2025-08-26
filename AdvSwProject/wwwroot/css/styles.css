@@ -1,0 +1,713 @@
+
+/* athkar page 1 */
+.cardq {
+  width: 20rem;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+     border-radius: 10px;
+        box-shadow: 1px 1px 5px;
+}
+
+.cardq img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardq figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.3rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.cardq:hover figcaption {
+  opacity: 1;
+}
+
+.wrapperq {
+aspect-ratio: 16 / 9;
+overflow: hidden;
+}
+.wrapperq img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: scale 300ms;
+}
+
+.wrapperq img:hover {
+scale: 1.2;
+}
+
+/* athkar page 2 */
+
+
+
+/* الشبكة */
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+/* الكارد */
+.cards {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* الخلفية */
+.cards-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+/* النص */
+.cards-category {
+  position: absolute;
+  top: 60%;
+  bottom: 0;
+  width: 100%;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  /* background: rgba(255, 255, 255, 0.5);  */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 22px;
+  z-index: 2;
+}
+
+/* التأثيرات */
+.cards:hover .cards-background {
+  transform: scale(1.15) translateZ(0);
+  background-size: 300px;
+}
+
+.cards-grid:hover > .cards:not(:hover) {
+  transform: scale(0.9);
+}
+
+.cards-grid:hover > .cards:not(:hover) .cards-background,
+.cards-grid:hover > .cards:not(:hover) .cards-category {
+  filter: saturate(0) contrast(1.2) blur(10px); 
+}
+
+
+
+/* المسبحة */
+@font-face {
+  font-family: arabic-flat;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/252403/JF-Flat-regular.ttf) format("truetype");
+}
+
+.fluid-container {
+  display: inline-block;
+}
+#shelf {
+  width: 100vw;
+  height: 60px;
+  background-color: #e3ded9;   
+  /* لون الشريط */
+  border: 2px solid #d3cbc4;
+  margin: 0;
+  position: relative;
+  z-index: 1; 
+}
+/* مربع العنوان */
+#head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2; 
+  margin-top: -90px;
+  margin-bottom: -10px; 
+  width: 100px;
+  height: 100px;
+border: 3px solid #cbb6a5;
+  border-radius: 30%;
+background-color: #f5eee6;
+   color: #7b5e4d; 
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#line {
+  margin: 30px auto 20px;
+ background-color: #f7f3ee;     
+  border-top: 2px solid #d6c4ba; 
+  border-bottom: 2px solid #e5d8cd;
+  border-radius: 40% 40% 0 0 / 60% 60% 40% 60%;
+  width: 320px; 
+  height: 100px;
+  padding-top: 10px;
+}
+
+#score {
+  font-size: 18px;
+  color: #8c3a3a;
+  margin: 10px 0 5px;
+}
+
+
+#tasbe7 {
+  padding-top: 0px;
+  font-size: 28px;
+  color: #944c4c;
+  margin: 0;
+}
+
+#circle {
+background-color: #e9d9cf;     
+  border: 5px solid #cbb2a4; 
+     width: 80px;
+  height: 80px;
+  margin: 10px auto 40px;
+  border-radius: 50%;
+   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#circle:active {
+  border-width: 6px;
+}
+
+#circle p {
+  font-size: 16px;
+  color: #6b4b3e;
+  line-height: 80px;
+  margin: 0;
+}
+
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
+}
+
+/* نهاية المسبحه */
+
+
+
+/* صفحة الذكر */
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ابعاد الكارد */
+.custom-card {
+  position: relative;
+  width: 30%;
+  max-width: 800px;
+  height: 165px;
+  overflow: hidden;
+  background: #eee;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.4s;
+}
+
+.custom-card h2 {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  font-size: 24px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  transition: 0.4s;
+  color: white;
+   z-index: 2;
+}
+
+.custom-card p {
+  position: absolute;
+  right: -100%;
+  bottom: 20px;
+  opacity: 0;
+  transition: 0.4s;
+     z-index: 2;
+
+}
+
+.custom-card span {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+  font-size: 18px;
+    z-index: 2;
+
+}
+
+.custom-card .custom-pic {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80%;
+  height: 90%;
+  background: url('https://via.placeholder.com/800x200') center/cover no-repeat;
+  border-radius: 15px;
+  filter: grayscale(1);
+  transition: 0.4s;
+  z-index: 1;
+}
+
+
+.custom-card .custom-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  left: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #BDA896;
+  transition: 0.4s;
+  opacity: 1;
+}
+
+.custom-card:hover .custom-button {
+  transform: scale(12);
+  opacity: 0.4;
+}
+
+.custom-card:hover h2 {
+  bottom: 80px;
+  right: 50px;
+}
+
+.custom-card:hover p {
+  opacity: 1;
+  right: 100px;
+}
+
+.custom-card:hover span {
+  opacity: 0;
+  top: 30px;
+}
+
+.custom-card:hover .custom-pic {
+  filter: grayscale(0);
+}
+
+.custom-container a {
+  display: block;
+  /* width: 100%; */
+  text-decoration: none;
+  color: inherit;
+}
+
+/* صفحة القران */
+.text-animation {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.text-wrapper h2 {
+  font-size: 4vw;
+  font-weight: bold;
+  color: #917F88;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+    font-family: 'Tajawal', sans-serif;
+
+}
+
+.text-wrapper h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 1px #917F88;
+  z-index: 1;
+}
+
+.text-wrapper h2:nth-child(2) {
+  color: #917F88;
+  z-index: 2;
+  animation: wave 4s ease-in-out infinite;
+  clip-path: polygon(
+    0% 46%, 17% 45%, 34% 50%, 56% 61%,
+    69% 62%, 86% 60%, 100% 51%,
+    100% 100%, 0% 100%
+  );
+}
+
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(
+      0% 46%, 17% 45%, 34% 50%, 56% 61%,
+      69% 62%, 86% 60%, 100% 51%,
+      100% 100%, 0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      8% 59%, 16% 64%, 33% 65%, 52% 61%,
+      70% 52%, 85% 47%, 100% 48%,
+      100% 100%, 0% 100%
+    );
+  }
+}
+
+.vidcard {
+  width: 400px;
+  background-color: #f1eeee;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.vidcard video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  display: block;
+}
+
+.vidcard figcaption {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+/*صفحة الدعاء*/
+
+
+/* drop down filter */
+
+.filter-box {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-dropdown {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f4e4e1, #e9e7dd);
+  font-family: 'Cairo', sans-serif;
+  color: #5a5a5a;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.filter-dropdown:hover {
+  border-color: #aaa;
+}
+
+.dua-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  text-align: center;
+}
+
+.dua-card {
+  position: relative;
+  background: #52677D;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem;
+  color: white;
+  transition: all 0.5s ease;
+  min-height: 200px;
+  z-index: 1;
+}
+
+/* Gradient Border Animation */
+.dua-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #DADEE1, #B9D8E1, #629BB5, #447F98);
+  z-index: -1;
+  border-radius: 22px;
+  animation: borderSpin 5s linear infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes borderSpin {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dua-emoji {
+  position: absolute;
+  top: -30px;
+  left: -25px;
+  font-size: 2rem;
+  opacity: 70%;
+}
+
+.dua-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  margin-top: 2rem;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #836871;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dua-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 6px);
+  height: calc(100% + 2px);
+  background-color: #c9a9a8;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+  z-index: 1;
+}
+
+.dua-btn::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: #212121;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+  z-index: 2;
+}
+
+.dua-btn:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+
+.dua-btn:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+
+.dua-btn:hover {
+  border: 2px solid #917F88;
+}
+
+.dua-btn .dua-spn {
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+
+/* دعم الدارك مود */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .card figcaption,
+  .cards-category,
+  #head,
+  #score,
+  #tasbe7,
+  #circle p {
+    color: #f0f0f0;
+  }
+
+  .card,
+  .cards,
+  #head,
+  #shelf,
+  #circle,
+  #line {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+
+  #circle {
+    background-color: #2a2a2a;
+  }
+
+  .cards-category {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  }
+
+  .card figcaption {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  }
+
+  .cards-grid:hover > .cards:not(:hover) .cards-background,
+  .cards-grid:hover > .cards:not(:hover) .cards-category {
+    filter: saturate(0) contrast(1.2) blur(10px) brightness(0.8);
+  }
+  /* الوضع الليلي لصفحة الذكر */
+.custom-card {
+  background: #1e1e1e;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+}
+
+.custom-card p {
+  color: #e0e0e0;
+}
+
+.custom-card span {
+  color: #cccccc;
+}
+
+.custom-card .custom-button {
+  background: #444;
+}
+
+/* الوضع الليلي لصفحة القرآن */
+.text-wrapper h2 {
+  color: #e0e0e0;
+}
+
+.text-wrapper h2:nth-child(1) {
+  -webkit-text-stroke: 1px #e0e0e0;
+}
+
+.text-wrapper h2:nth-child(2) {
+  color: #e0e0e0;
+}
+
+.vidcard {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.vidcard figcaption {
+  color: #f0f0f0;
+}
+
+/* الوضع الليلي لصفحة الدعاء */
+.filter-dropdown {
+  background: linear-gradient(to right, #3a3a3a, #2e2e2e);
+  color: #ddd;
+  border-color: #555;
+}
+
+.dua-card {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.dua-card::before {
+  background: linear-gradient(45deg, #555, #777, #999, #aaa);
+}
+
+.dua-btn {
+  color: #e0e0e0;
+  border-color: #aaa;
+}
+
+.dua-btn::before {
+  background-color: #444;
+}
+
+.dua-btn::after {
+  background-color: #111;
+}
+
+.dua-spn {
+    color: #e0e0e0;
+  }
+  .dua-emoji {
+    color: #ccc; 
+  }
+.athkari-container {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+.athkari-container p,
+.athkari-container span {
+  color: #cccccc;
+}
+.custom-card h2,
+  .custom-card p {
+    color: #ffffff;
+  }
+
+  .custom-button {
+    background-color: #333;
+    color: #fff;
+  }
+}

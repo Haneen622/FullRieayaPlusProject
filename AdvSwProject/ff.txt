@@ -1,0 +1,1434 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>RieayaPlus</title>
+
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/webp" href="~/images/log.webp">
+    <link rel="stylesheet" href="~/css/style_home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/service_home.css" asp-append-version="true" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap"
+      rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+     
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true" />
+    <!-- <link rel="stylesheet" href="../src/report_home.css" /> -->
+    <!-- <link rel="stylesheet" href="feedBack.css" /> -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {},
+            fontFamily: {
+              sans: ["Open Sans", "Noto Kufi Arabic", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+/* Force dark mode styles if Tailwind dark: classes aren't working */
+.dark .from_our_seniors {
+  background-color: #111827 !important; /* gray-900 */
+}
+
+.dark .service_title {
+  color: #f3f4f6 !important; /* gray-100 */
+}
+
+.dark .card {
+  background-color: #111827 !important; /* gray-800 */
+  border-color: #374151 !important; /* gray-700 */
+}
+
+.dark .slide1 {
+  background-color: #1f2937 !important; /* gray-800 */
+}
+
+.dark .slide2 {
+  background-color: #374151 !important; /* gray-700 */
+}
+
+.dark .slide1 .content {
+  background-color: #1f2937 !important; /* gray-800 */
+}
+
+.dark .slide2 .content {
+  background-color: #374151 !important; /* gray-700 */
+}
+
+.dark .slide1 a {
+  color: #111827 !important; /* gray-100 */
+}
+
+.dark .slide1 a:hover {
+  color: #111827 !important; /* yellow-400 */
+}
+
+.dark .slide2 p {
+  color: #f3f4f6 !important; /* gray-200 */
+}
+
+</style>
+  </head>
+  
+
+  <body class="dark:bg-gray-900">
+    <special-header></special-header>
+  <!-- New -->
+    <!-- Fixed Top Corner Buttons -->
+<div class="fixed top-6 right-6 z-50 flex flex-col sm:flex-row gap-3 items-end sm:items-center">
+  <!-- Profile Button -->
+ @*  <button
+    id="profileButton"
+    class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50 hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300 flex items-center justify-center group hover:scale-105"
+    aria-label="Profile"
+    onclick="window.location.href='profile.html';">
+    <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 transition-colors group-hover:text-[#CEB579] dark:group-hover:text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <!-- Memory Button -->
+  <button
+    id="memoryButton"
+    class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50 hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300 flex items-center justify-center group hover:scale-105"
+    aria-label="Memories"
+    onclick="window.location.href='memory.html';">
+    <img src="~/images/memory-icon.png" alt="Memories" class="w-6 h-6 opacity-90 group-hover:opacity-100 dark:opacity-95" />
+  </button> *@
+
+
+        <!-- Profile Button -->
+     @*    <a asp-page="/profile"
+           class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300
+          dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50
+          hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300
+          flex items-center justify-center group hover:scale-105"
+           aria-label="Profile">
+            <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 transition-colors
+              group-hover:text-[#CEB579] dark:group-hover:text-yellow-400"
+                 fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7
+             9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+        </a>
+
+        <!-- Memory Button -->
+        <a asp-page="/memory"
+           class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300
+          dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50
+          hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300
+          flex items-center justify-center group hover:scale-105"
+           aria-label="Memories">
+            <img src="~/images/memory-icon.png"
+                 alt="Memories"
+                 class="w-6 h-6 opacity-90 group-hover:opacity-100 dark:opacity-95" />
+        </a> *@
+
+        <!-- Profile Button -->
+        <button type="button"
+                onclick="location.href='@Url.Action("profile", "Home")'"
+                class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300
+               dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50
+               hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300
+               flex items-center justify-center group hover:scale-105"
+                aria-label="Profile">
+            <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 transition-colors
+              group-hover:text-[#CEB579] dark:group-hover:text-yellow-400"
+                 fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7
+             9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+        </button>
+
+        <!-- Memory Button -->
+        <button type="button"
+                onclick="location.href='@Url.Action("memory", "Home")'"
+                class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300
+               dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50
+               hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300
+               flex items-center justify-center group hover:scale-105"
+                aria-label="Memories">
+            <img src="~/images/memory-icon.png"
+                 alt="Memories"
+                 class="w-6 h-6 opacity-90 group-hover:opacity-100 dark:opacity-95" />
+        </button>
+
+
+
+
+
+  <!-- Dark Mode Toggle Button -->
+  <button
+    id="darkModeToggle"
+    class="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-full shadow-lg dark:shadow-gray-700/50 hover:shadow-xl dark:hover:shadow-gray-700/70 transition-all duration-300 flex items-center justify-center group hover:scale-105"
+    aria-label="Toggle dark mode">
+    <!-- Sun icon (visible in dark mode) -->
+    <svg class="w-6 h-6 text-yellow-500 dark:block hidden transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+    </svg>
+    <!-- Moon icon (visible in light mode) -->
+    <svg class="w-6 h-6 text-gray-700 dark:hidden block transition-transform group-hover:-rotate-12" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+    </svg>
+  </button>
+</div>
+
+
+    <section class="banner w-full h-[100vh] relative" id="banner">
+<div class="absolute inset-0 w-full h-full">
+  <img
+    src="~/images/hand.jpg"
+    alt="background"
+    class="w-full h-full object-cover dark:brightness-75"
+  />
+  <!-- Dark overlay for better text readability -->
+  <div class="banner-overlay absolute inset-0 dark:bg-black/30"></div>
+</div>
+
+      
+<div class="banner-text w-full h-full absolute flex flex-row-reverse justify-between items-end text-white dark:text-gray-100 relative z-10">
+        <div class="banner-right-button text-lg sm:mx-16 sm:mb-10">
+          <a href="signin&signup/signin&signup.html" class="text-white dark:text-gray-100 hover:text-[#CEB579] dark:hover:text-yellow-400 transition-colors">Sign UP</a>
+        </div>
+        <div class="mouse_down mx-16 mb-10 sm:flex hidden">
+          <div class="mouse-icon">
+            <svg
+              width="19"
+              height="30"
+              viewBox="0 0 19 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16.875 20.625V9.375C16.875 7.38588 16.0848 5.47822 14.6783 4.0717C13.2718 2.66518 11.3641 1.875 9.375 1.875C7.38588 1.875 5.47822 2.66518 4.0717 4.0717C2.66518 5.47822 1.875 7.38588 1.875 9.375V20.625C1.875 22.6141 2.66518 24.5218 4.0717 25.9283C5.47822 27.3348 7.38588 28.125 9.375 28.125C11.3641 28.125 13.2718 27.3348 14.6783 25.9283C16.0848 24.5218 16.875 22.6141 16.875 20.625ZM9.375 0C6.8886 0 4.50403 0.98772 2.74587 2.74587C0.98772 4.50403 0 6.8886 0 9.375V20.625C0 23.1114 0.98772 25.496 2.74587 27.2541C4.50403 29.0123 6.8886 30 9.375 30C11.8614 30 14.246 29.0123 16.0041 27.2541C17.7623 25.496 18.75 23.1114 18.75 20.625V9.375C18.75 6.8886 17.7623 4.50403 16.0041 2.74587C14.246 0.98772 11.8614 0 9.375 0Z"
+                fill="white"
+                class="mouse dark:fill-gray-100"></path>
+              <path
+                d="M10.0379 7.39959C9.8621 7.22377 9.62364 7.125 9.375 7.125C9.12636 7.125 8.8879 7.22377 8.71209 7.39959C8.53627 7.5754 8.4375 7.81386 8.4375 8.0625V11.8125C8.4375 12.0611 8.53627 12.2996 8.71209 12.4754C8.8879 12.6512 9.12636 12.75 9.375 12.75C9.62364 12.75 9.8621 12.6512 10.0379 12.4754C10.2137 12.2996 10.3125 12.0611 10.3125 11.8125V8.0625C10.3125 7.81386 10.2137 7.5754 10.0379 7.39959Z"
+                fill="white"
+                class="cursor dark:fill-gray-100"></path>
+            </svg>
+            <p class="text-white dark:text-gray-100 text-[10px] relative right-7 mt-2 w-24">
+              SCROOL DOWN
+            </p>
+          </div>
+        </div>
+        
+    <div
+  class="text-left w-[510px] sm:ml-16 ml-10 sm:mb-10 relative sm:bottom-0 bottom-[100px]">
+  <p class="sm:text-2xl mb-5 text-white dark:text-gray-100">
+    Welcome to RieayaPlus !
+  </p>
+  <p class="text-sm text-white dark:text-gray-100">
+    Your companion for a safer, healthier, and happier life.
+  </p>
+</div>
+
+      </div>
+    </section>
+<section class="from_our_seniors  dark:bg-gray-900 " id="from_our_seniors2">
+  <h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">
+    from our seniors
+  </h1>
+  
+   <div class="owl-carousel owl-theme"> 
+       
+
+    <div class="card dark:bg-gray-800 dark:border-gray-700">
+      <div class="slide slide1 dark:bg-gray-800">
+        <div class="content dark:bg-gray-800">
+          <div class="item">
+            <div class="w-[300px] h-full p-4 flex flex-col items-center justify-center">
+              <a class="text-xl text-center dark:text-gray-100 dark:hover:text-yellow-400 transition-colors" href="">"This app has truly made my days easier. I feel more at ease knowing I won't forget my medicine."</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide2 dark:bg-gray-700">
+        <div class="content dark:bg-gray-700">
+          <p class="dark:text-gray-200">– Samira Al-Fayez, 68 years old</p>
+        </div>
+      </div>
+    </div>
+    <div class="card dark:bg-gray-800 dark:border-gray-700">
+      <div class="slide slide1 dark:bg-gray-800">
+        <div class="content dark:bg-gray-800">
+          <div class="item">
+            <div class="w-[300px] h-full p-4 flex flex-col items-center justify-center">
+              <a class="text-xl text-center dark:text-gray-100 dark:hover:text-yellow-400 transition-colors" href="">
+              "   I never thought something so simple could bring so much comfort. It really makes me feel cared for."</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide2 dark:bg-gray-700">
+        <div class="content dark:bg-gray-700">
+          <p class="dark:text-gray-200">– Ahmed Al-Khalil, 72 years old</p>
+        </div>
+      </div>
+    </div>
+    <div class="card dark:bg-gray-800 dark:border-gray-700">
+      <div class="slide slide1 dark:bg-gray-800">
+        <div class="content dark:bg-gray-800">
+          <div class="item">
+            <div class="w-[300px] h-full p-4 flex flex-col items-center justify-center">
+              <a class="text-xl text-center dark:text-gray-100 dark:hover:text-yellow-400 transition-colors" href="">
+                  "I used to worry about missing doctor visits, but now I feel supported and in control."</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide2 dark:bg-gray-700">
+        <div class="content dark:bg-gray-700">
+          <p class="dark:text-gray-200">– Mariam Al-Jamil, 80 years old</p>
+        </div>
+      </div>
+    </div>
+    <div class="card dark:bg-gray-800 dark:border-gray-700">
+      <div class="slide slide1 dark:bg-gray-800">
+        <div class="content dark:bg-gray-800">
+          <div class="item">
+            <div class="w-[300px] h-full p-4 flex flex-col items-center justify-center">
+              <a class="text-xl text-center dark:text-gray-100 dark:hover:text-yellow-400 transition-colors" href="">
+                  "The gentle reminders and activities give me a sense of routine and joy. It feels like someone's always looking out for me."</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide2 dark:bg-gray-700">
+        <div class="content dark:bg-gray-700">
+          <p class="dark:text-gray-200">– Youssef Al-Mansour, 77 years old</p>
+        </div>
+      </div>
+    </div>
+    <div class="card dark:bg-gray-800 dark:border-gray-700">
+      <div class="slide slide1 dark:bg-gray-800">
+        <div class="content dark:bg-gray-800">
+          <div class="item">
+            <div class="w-[300px] h-full p-4 flex flex-col items-center justify-center">
+              <a class="text-xl text-center dark:text-gray-100 dark:hover:text-yellow-400 transition-colors" href="">
+          "Having someone remind me to take my medication and check in on me makes me feel safe and cared for every day."</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide2 dark:bg-gray-700">
+        <div class="content dark:bg-gray-700">
+          <p class="dark:text-gray-200">– Fatima Al-Husseini, 72 years old</p>
+        </div>
+      </div>
+    </div>
+      </div>
+      
+  </section>
+  <!-- <section class="from_our_seniors dark:bg-gray-900 " id="services">
+  <h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">
+    from our seniors
+  </h1> -->
+    <section class="Medication_Reminder from_our_seniors dark:bg-gray-900" id="Medication_Reminder2">
+        <h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">Medication Reminder</h1>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto mt-6">
+            <button style="background-color:#7BCDF0" class="hover:bg-[#64b9e0] dark:bg-[#7BCDF0] dark:hover:bg-[#64b9e0] text-white font-medium text-sm px-5 py-2 rounded-md transition w-52" onclick="document.getElementById('addMedicationModal').showModal()">Add New Medication</button>
+            <button onclick="openImageOptions()" class="bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700 text-white font-medium text-sm px-5 py-2 rounded-md flex items-center justify-center gap-2 transition w-52">
+                <i class="fas fa-qrcode text-sm"></i> Add via QR Code
+            </button>
+            <input type="file" id="qrInput" accept="image/*" style="display:none" capture="environment" onchange="handleImage(this)">
+        </div>
+
+        <div class="relative overflow-x-auto shadow-md dark:shadow-gray-700/50 sm:rounded-lg m-10">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 dark:text-gray-300 uppercase bg-gray-100 dark:bg-gray-800">
+                    <tr>
+                        <th class="px-6 py-3">Medicine Name</th>
+                        <th class="px-6 py-3">Dosage</th>
+                        <th class="px-6 py-3">Medicine Time</th>
+                        <th class="px-6 py-3">Before/After Eating</th>
+                        <th class="px-6 py-3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tbod">
+                    @if (Model?.Medications != null)
+                    {
+                        foreach (var m in Model.Medications)
+                        {
+                            <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                <td class="px-6 py-4 dark:text-gray-300">@m.MedicineName</td>
+                                <td class="px-6 py-4 dark:text-gray-300">@m.Dosage</td>
+                                @{
+                                    var _times = (m.MedicationTimes as IEnumerable<TimeSpan>) ?? Enumerable.Empty<TimeSpan>(); var _timesText = string.Join(", ", _times.Select(t => t.ToString("hh\\:mm")));
+                                }
+                                <td class="px-6 py-4 dark:text-gray-300">@_timesText</td>
+                                <td class="px-6 py-4 dark:text-gray-300">@m.BeforeAfterEating</td>
+                                <td class="px-6 py-4">
+                                    <form asp-controller="Medication" asp-action="Delete" method="post" class="inline">
+                                        <input type="hidden" name="id" value="@m.Id" />
+                                        @Html.AntiForgeryToken()
+                                        <button class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white px-3 py-1 rounded text-xs">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <dialog id="addMedicationModal" class="rounded-lg p-6 w-full max-w-md mx-auto border border-[#7BCDF0] dark:border-gray-600 shadow-xl dark:shadow-gray-700/50 dark:bg-gray-800">
+            <h2 class="text-xl font-semibold mb-4 py-4 dark:text-gray-300">Add New Medication</h2>
+            <form asp-controller="Medication" asp-action="Add" method="post">
+                @Html.AntiForgeryToken()
+                <div>
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Medicine Name</label>
+                    <input type="text" name="MedicineName" id="MedicineName" class="w-full border dark:border-gray-600 rounded px-3 py-2 text-sm text-gray-900 dark:text-white dark:bg-gray-700 focus:ring-2 focus:ring-[#7BCDF0] dark:focus:ring-[#7BCDF0]" />
+                </div>
+                <div class="mt-4">
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Dosage</label>
+                    <input type="text" name="Dosage" id="dosage" class="w-full border dark:border-gray-600 rounded px-3 py-2 text-sm text-gray-900 dark:text-white dark:bg-gray-700 focus:ring-2 focus:ring-[#7BCDF0] dark:focus:ring-[#7BCDF0]" />
+                </div>
+                <div class="mt-4">
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Before/After Eating</label>
+                    <input type="text" name="BeforeAfterEating" id="baEating" class="w-full border dark:border-gray-600 rounded px-3 py-2 text-sm text-gray-900 dark:text-white dark:bg-gray-700 focus:ring-2 focus:ring-[#7BCDF0] dark:focus:ring-[#7BCDF0]" />
+                </div>
+                <div class="mt-4">
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Medicine Time</label>
+                    <div id="time-fields" class="space-y-2">
+                        <input type="time" name="MedicationTimes" class="w-full border dark:border-gray-600 rounded px-3 py-2 text-sm text-gray-900 dark:text-white dark:bg-gray-700 focus:ring-2 focus:ring-[#7BCDF0] dark:focus:ring-[#7BCDF0]" />
+                    </div>
+                    <button type="button" onclick="addTimeSelect()" class="text-blue-600 dark:text-blue-400 mt-2 text-sm hover:underline">+ Add More Time</button>
+                </div>
+                <div class="mt-6 flex justify-end gap-3">
+                    <button type="button" onclick="document.getElementById('addMedicationModal').close()" class="bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700 text-white px-4 py-2 rounded text-sm">Close</button>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white px-4 py-2 rounded text-sm">Save</button>
+                </div>
+            </form>
+        </dialog>
+
+        <div class="col-span-full flex justify-start ml-10" id="alertContainerWrapper">
+            <div id="alertContainer" class="dark:text-gray-100"></div>
+        </div>
+    </section>
+    <section class="from_our_seniors dark:bg-gray-900" id="Appointments_Reminder2">
+        <h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">Appointments Reminder</h1>
+        <div class="text-center my-6">
+            <button onclick="document.getElementById('appointmentModal').showModal()" style="background-color:#7BCDF0" class="hover:bg-[#64b9e0] text-white font-medium px-5 py-2 rounded-md transition">Add New Appointment</button>
+        </div>
+        <div id="cardBod" class="flex gap-6 overflow-x-auto px-4 pb-4">
+            @if (Model?.Appointments != null)
+            {
+                foreach (var a in Model.Appointments)
+                {
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-md p-4 flex-shrink-0">
+                        <img src="~/images/3634680.png" class="w-full h-32 object-cover rounded-md mb-4" alt="Card" />
+                        <ul class="space-y-1 text-sm">
+                            <li><h1 class="text-xl font-semibold">@a.Name</h1></li>
+                            <li><h5 class="text-gray-600">@a.Address</h5></li>
+                            <li><h6 class="text-gray-500">@a.Date.ToString("yyyy-MM-dd")</h6></li>
+                            <li><h6 class="text-gray-500">@a.Time.ToString(@"hh\:mm")</h6></li>
+                            <li>
+                                <form asp-controller="Appointments" asp-action="Delete" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@a.Id" />
+                                    <button class="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded mt-2">Delete</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            }
+        </div>
+
+        <dialog id="appointmentModal" class="rounded-lg p-0 w-full max-w-md shadow-lg backdrop:bg-black/50 bg-white dark:bg-gray-800 dark:shadow-gray-700">
+            <form asp-controller="Appointments" asp-action="Add" method="post" class="p-6 space-y-4">
+                @Html.AntiForgeryToken()
+                <h2 class="text-xl font-semibold mb-4 py-4 dark:text-gray-300">Add Appointment</h2>
+                <div>
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Appointment Name</label>
+                    <input type="text" name="Name" id="appointmentName" class="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Appointment Address</label>
+                    <input type="text" name="Address" id="appointmentAddress" class="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Appointment Date</label>
+                    <input type="date" name="Date" id="appointmentDate" class="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 py-4 dark:text-gray-300">Appointment Time</label>
+                    <input type="time" name="Time" id="appointmentTime" class="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white" />
+                </div>
+                <div class="flex justify-end gap-2 pt-4">
+                    <button type="button" onclick="document.getElementById('appointmentModal').close()" class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 text-black dark:text-white">Cancel</button>
+                    <button type="submit" class="px-4 py-2 rounded bg-pink-500 text-white hover:bg-pink-600 dark:bg-pink-600 dark:hover:bg-pink-700">Save</button>
+                </div>
+            </form>
+        </dialog>
+    </section>
+<section class="from_our_seniors  dark:bg-gray-900 " id="Entertainment2">
+  <h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">
+    Entertainment
+  </h1>
+  <div class="entertainment bg-r" id="entertainment">
+  <div class="container">
+    <div class="main-heading">
+      <!-- <h2>Entertainment</h2>
+      <p>Enjoy joyful moments with games, music, and uplifting activities!</p>
+    </div> -->
+  <div class="flex justify-center mb-10">
+            <div class="dropdown" id="categoryDropdown">
+                <div class="dropdown-overlay" onclick="closeDropdown()"></div>
+                
+                <button class="dropdown-button" onclick="toggleDropdown()">
+                    <span id="selectedCategory">All Categories</span>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </button>
+                
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item active" data-value="all" onclick="selectCategory(event, 'All Categories', 'all')">
+                        <i class="fas fa-th-large mr-2"></i>
+                        All Categories
+                    </a>
+                    
+                    <a href="music.html" class="dropdown-item" data-value="music" >
+                        <i class="fas fa-music mr-2"></i>
+                        Music
+                    </a>
+                    
+                    <a href="games.html" class="dropdown-item" data-value="games">
+                        <i class="fas fa-gamepad mr-2"></i>
+                        Games
+                    </a>
+                    
+                    <a href="Theater_Drama.html" class="dropdown-item" data-value="drama">
+                        <i class="fas fa-theater-masks mr-2"></i>
+                        Drama & Theatre
+                    </a>
+                    
+                    <a href="books.html" class="dropdown-item" data-value="books" >
+                        <i class="fas fa-book mr-2"></i>
+                        Books & Articles
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+  </div> 
+
+  <!-- Owl Carousel Slider -->
+  <div class="owl-carousel owl-theme px-10" id="entertainment-carousel">
+    <div class="box">
+      <img src="~/images/musicc.jpg" alt="Music">
+      <div class="caption">
+        <h4><a href="music.html" class="underline-none">Music</a></h4>
+      </div>
+    </div>
+    <div class="box">
+      <img src="~/images/games.jpg" alt="Games">
+      <div class="caption">
+        <h4><a href="games.html" class="underline-none">Games</a></h4>
+      </div>
+    </div>
+    <div class="box">
+      <img src="~/images/Theatre.jpg" alt="Drama & Theatre">
+      <div class="caption">
+        <h4><a href="Theater_Drama.html" class="underline-none">Drama & Theatre</a></h4>
+      </div>
+    </div>
+    <div class="box">
+      <img src="~/images/books.jpg" alt="Books">
+      <div class="caption">
+        <h4><a href="books.html" class="underline-none">Books & Articles</a></h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+@* <section class=" from_our_seniors  dark:bg-gray-900 " id="HEALTHY_LIFE2">
+  <div class="health-section" id="health">
+      <div class="container">
+        <div class="main-heading">
+
+  <h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">
+      HEALTHY LIFE
+  </h1>      
+  <p class="text-base text-gray-800 dark:text-gray-300 bg-[#cbe8f1] px-6 py-4 mx-auto max-w-3xl rounded-lg text-center mt-6">
+  Taking care of your health doesn't have to be hard. Here you'll find simple daily tips and gentle exercises to help you feel better, move easier, and stay strong. Remember — a little bit every day goes a long way! 💪💖
+</p>
+
+        </div>
+        <div class="section m-10 " onclick="toggleSection(this)">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3 ">
+      <span class="text-pink-500 text-2xl">🧘</span>
+      <h2 class="text-pink-600 text-lg sm:text-xl font-bold tracking-wide">
+        Health & Exercise Tips
+      </h2>
+  
+      <i class="fas fa-chevron-down text-gray-600 text-lg transition-transform duration-300"></i>
+  </div>
+</div>
+
+        <div class="content">
+          <div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)"> ➕ Stay Hydrated</button>
+  <div class="tip-content">Drink 6–8 glasses of water daily to stay energized and healthy.</div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">➕ Gentle Stretching</button>
+  <div class="tip-content">Do this <a href="https://youtu.be/ZvfDryEt5bw?si=wbuAkW8-tVpQXnH5" target="_blank" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover underline-none">easy stretch video</a> every morning to feel relaxed.</div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">➕ Daily Walk</button>
+  <div class="tip-content">A 15-minute walk boosts your heart and mood!</div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">➕ Chair Yoga</button>
+  <div class="tip-content">
+    Watch this <a href="https://youtu.be/U_jdXFfegKE?si=_eIDUgrQ7YdvPnyV" target="_blank" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover underline-none">chair yoga video</a> for mobility and strength.
+  </div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">➕ Breathing Exercises</button>
+  <div class="tip-content">Deep breathing can reduce stress and improve focus. Try it for 5 minutes daily.</div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">➕ Daily workout</button>
+  <div class="tip-content">
+    Watch this <a href="https://youtu.be/PNs0KSWWkqY?si=CmVmK83xyplvN2Dn" target="_blank" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover underline-none">Daily workout video</a> to build strength at home.
+  </div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">
+    ➕ Get Good Sleep
+  </button>
+  <div class="tip-content">
+    Sleeping 7 to 8 hours at night helps your body rest and recover. Try to go to bed at the same time every night.
+  </div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">
+    ➕ Eat Balanced Meals
+  </button>
+  <div class="tip-content">
+    Include vegetables, fruits, whole grains, and protein in your meals. Good nutrition helps keep you strong and active.
+  </div>
+</div>
+
+<div class="tip">
+  <button class="tip-btn" onclick="toggleTip(event, this)">
+    ➕ Stay Connected
+  </button>
+  <div class="tip-content">
+    Talking to family or friends can lift your mood and reduce loneliness. Even a short call can make a big difference.
+  </div>
+</div>
+
+  </div>
+</div>
+<div class="mt-40 text-center hlthQoute">
+  <p style="font-style: italic; color: #555;" class="dark:text-gray-300" >You’re doing great! Every small step matters. Keep moving and smiling — your health loves it! 😊</p>
+</div>
+</div>
+  </div>
+  </section> *@
+        <section class="from_our_seniors dark:bg-gray-900" id="HEALTHY_LIFE2">
+            <div class="health-section" id="health">
+                <div class="container">
+                    <div class="main-heading">
+                        <h1 class="sevicesAnimation text-center font-bold text-4xl service_title dark:text-gray-100 pt-10">
+                            HEALTHY LIFE
+                        </h1>
+                        <p class="text-base text-gray-800 dark:text-gray-300 bg-[#cbe8f1] px-6 py-4 mx-auto max-w-3xl rounded-lg text-center mt-6">
+                            Taking care of your health doesn't have to be hard. Here you'll find simple daily tips and gentle exercises to help you feel better, move easier, and stay strong. 💪💖
+                        </p>
+                    </div>
+
+                    <div class="section m-10">
+                        <div class="flex items-center justify-between cursor-pointer" onclick="toggleSection(this)">
+                            <div class="flex items-center gap-3">
+                                <span class="text-pink-500 text-2xl">🧘</span>
+                                <h2 class="text-pink-600 text-lg sm:text-xl font-bold tracking-wide">
+                                    Health & Exercise Tips
+                                </h2>
+                                <i class="fas fa-chevron-down text-gray-600 text-lg transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            @foreach (var tip in Model.HealthTips)
+                            {
+                                <div class="tip">
+                                    <button class="tip-btn" onclick="toggleTip(event, this)">➕ @tip.Title</button>
+                                    <div class="tip-content">
+                                        @tip.Description
+                                        @if (!string.IsNullOrEmpty(tip.VideoUrl))
+                                        {
+                                            <div>
+                                                <a href="@tip.VideoUrl" target="_blank" class="text-blue-500 underline">Watch Video</a>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="mt-40 text-center hlthQoute">
+                        <p class="italic text-gray-600 dark:text-gray-300">
+                            You’re doing great! Every small step matters. Keep moving and smiling — your health loves it! 😊
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  <!-- القسم الديني -->
+   <a href="athkari.html" style="text-decoration: none; color: inherit;">
+  <figure class="cardq wrapperq">
+    <img src="media/~/images/makkafirstpage.jpg">
+    <figcaption>
+      أذكاري
+    </figcaption>
+  </figure>
+  </a>
+  
+<section class="FEEDBACK2 from_our_seniors  dark:bg-gray-900 " id="services"> 
+<h1 class="sevicesAnimation text-center font-bold text-4xl service_title animate__animated animate__backInUp animate__delay-0.5s dark:text-gray-100 pt-10">
+  FEEDBACK
+</h1>    
+<div class="containerrr dark:bg-gray-900">
+  <span class="big-circle dark:bg-gray-700"></span>
+  <img src="img/shape.png" class="square dark:brightness-75" alt="" />
+  <div class="form dark:bg-gray-800 dark:shadow-gray-700">
+    <div class="contact-info dark:bg-gray-800">
+      <h3 class="title dark:text-white">Let's get in touch</h3>
+      <p class="text dark:text-gray-300">
+        If you have any questions, suggestions, or feedback, feel free to reach out — we'd love to hear from you!
+      </p>
+
+      <div class="info">
+        <div class="information">
+          <img src="img/location.png" class="icon dark:brightness-90" alt="" />
+          <p class="dark:text-gray-200">92 Cherry Drive Uniondale, NY 11553</p>
+        </div>
+        <div class="information">
+          <img src="img/email.png" class="icon dark:brightness-90" alt="" />
+          <p class="dark:text-gray-200">lorem@ipsum.com</p>
+        </div>
+        <div class="information">
+          <img src="img/phone.png" class="icon dark:brightness-90" alt="" />
+          <p class="dark:text-gray-200">123-456-789</p>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <p class="dark:text-gray-300">Connect with us :</p>
+        <div class="social-icons">
+          <a href="#" class="dark:text-gray-300 dark:hover:text-white">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="dark:text-gray-300 dark:hover:text-white">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="dark:text-gray-300 dark:hover:text-white">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="dark:text-gray-300 dark:hover:text-white">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form dark:bg-gray-800">
+      <span class="circle one dark:bg-gray-600"></span>
+      <span class="circle two dark:bg-gray-700"></span>
+
+      <form action="index.html" autocomplete="off">
+        <h3 class="title dark:text-white">Contact us</h3>
+        <div class="input-container">
+          <input type="text" name="name" class="input dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+          <label for="" class="dark:text-gray-400">Username</label>
+          <span class="dark:text-gray-400">Username</span>
+        </div>
+        <div class="input-container">
+          <input type="email" name="email" class="input dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+          <label for="" class="dark:text-gray-400">Email</label>
+          <span class="dark:text-gray-400">Email</span>
+        </div>
+        <div class="input-container">
+          <input type="tel" name="phone" class="input dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+          <label for="" class="dark:text-gray-400">Phone</label>
+          <span class="dark:text-gray-400">Phone</span>
+        </div>
+        <div class="input-container textarea">
+          <textarea name="message" class="input dark:bg-gray-700 dark:text-white dark:border-gray-600"></textarea>
+          <label for="" class="dark:text-gray-400">Message</label>
+          <span class="dark:text-gray-400">Message</span>
+        </div>
+        <input type="submit" value="Send" class="btn dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" />
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+  <div class="footer">
+      <div class="container">
+        <img src="~/images/logo.png" alt="logo">
+        <p>We Are Social</p>
+        <div class="social-icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fa-solid fa-house"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <p class="copyright">&copy; 2025 <span>RieayaPlus</span> All Rigth Reserved</p>
+      </div>
+    </div>
+    <script src="~/js/template_home.js" asp-append-version="true"></script>
+    <script src="~/js/service_home.js" asp-append-version="true"></script>
+    <!-- <script src="./report_home.js"></script>  -->
+    <!-- <script src="./contact.js"></script> -->
+    
+    <!-- Dark Mode and Profile Toggle Script -->
+     
+<script>
+console.log('Dark mode script loading...');
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+const html = document.documentElement;
+
+// Debug function
+function debugDarkMode() {
+  console.log('HTML element:', html);
+  console.log('Has dark class:', html.classList.contains('dark'));
+  console.log('Current theme:', localStorage.getItem('theme'));
+}
+
+// Check if toggle button exists
+if (!darkModeToggle) {
+  console.error('Dark mode toggle button not found! Make sure element has id="darkModeToggle"');
+} else {
+  console.log('Toggle button found:', darkModeToggle);
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+console.log('Saved theme:', savedTheme);
+
+if (savedTheme === 'dark') {
+  html.classList.add('dark');
+  console.log('Applied dark mode from storage');
+} else if (savedTheme === 'light') {
+  html.classList.remove('dark');
+  console.log('Applied light mode from storage');
+} else {
+  // Check system preference
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  console.log('System prefers dark:', prefersDark);
+  if (prefersDark) {
+    html.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// Add click event
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', () => {
+    console.log('Toggle clicked');
+    html.classList.toggle('dark');
+    const isDark = html.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    console.log('New theme:', isDark ? 'dark' : 'light');
+    debugDarkMode();
+  });
+}
+
+// Initial debug
+debugDarkMode();
+
+// Test function - call this in console to manually toggle
+window.testDarkMode = function() {
+  html.classList.add('dark');
+  console.log('Manually added dark class');
+  debugDarkMode();
+};
+
+console.log('Run testDarkMode() in console to test manually');
+</script>
+<script>
+
+
+
+      // Profile button functionality (placeholder for future implementation)
+      profileButton.addEventListener('click', () => {
+        // This can be connected to profile page navigation later
+        console.log('Profile button clicked - ready for profile page integration');
+        // Example: window.location.href = '/profile';
+      });
+    </script>
+    
+    <script>
+      const contactForm = document.getElementById("contactForm");
+      const successPopup = document.getElementById("successPopup");
+      const closePopupBtn = document.getElementById("closePopupBtn");
+
+      // Input fields
+      // const nationalIdInput = document.getElementById("userId");
+      const phoneInput = document.getElementById("userPhone");
+      const locationInput = document.getElementById("userLocation");
+      const sectorInput = document.getElementById("userSector");
+      const commentInput = document.getElementById("userComment");
+
+      // Error message placeholders
+      // const nationalIdError = document.getElementById("userIdError");
+      const phoneError = document.getElementById("userPhoneError");
+      const locationError = document.getElementById("userLocationError");
+      const sectorError = document.getElementById("userSectorError");
+      const commentError = document.getElementById("userCommentError");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let formIsValid = true;
+
+        // Helper function to set field as invalid
+        function setInvalid(inputElement, errorElement, errorMessage) {
+          // Add a prominent red border. Remove any existing border classes first if necessary.
+          inputElement.classList.remove("border-gray-300"); // If it had a default border
+          inputElement.classList.add("border-2", "border-red-500");
+          if (errorElement) errorElement.textContent = errorMessage;
+          formIsValid = false;
+        }
+
+        // Helper function to set field as valid
+        function setValid(inputElement, errorElement) {
+          inputElement.classList.remove("border-2", "border-red-500");
+          // Optionally add back a default border if your original design had one and it got removed
+          // inputElement.classList.add('border-gray-300'); // Or remove if not needed
+          if (errorElement) errorElement.textContent = "";
+        }
+
+        // --- Validation Checks ---
+
+        if (!locationInput.value.trim()) {
+          setInvalid(locationInput, locationError, "الرجاء إدخال الموقع.");
+        } else {
+          setValid(locationInput, locationError);
+        }
+
+        if (!sectorInput.value) {
+          setInvalid(sectorInput, sectorError, "الرجاء اختيار القطاع.");
+        } else {
+          setValid(sectorInput, sectorError);
+        }
+
+        if (!commentInput.value.trim()) {
+          setInvalid(
+            commentInput,
+            commentError,
+            "الرجاء كتابة اقتراحك أو تعليقك."
+          );
+        } else if (commentInput.value.trim().length < 10) {
+          setInvalid(
+            commentInput,
+            commentError,
+            "يجب أن يكون التعليق 10 أحرف على الأقل."
+          );
+        } else {
+          setValid(commentInput, commentError);
+        }
+
+        if (formIsValid) {
+          console.log("✅ Form is valid. Showing success popup.");
+          successPopup.classList.remove("hidden");
+          successPopup.classList.add("flex");
+          contactForm.reset();
+
+          [
+            nationalIdInput,
+            phoneInput,
+            locationInput,
+            sectorInput,
+            commentInput,
+          ].forEach((input) => {
+            const errorEl = document.getElementById(input.id + "Error");
+            setValid(input, errorEl);
+          });
+        } else {
+          console.log("❌ Form is invalid. Please fix the highlighted fields.");
+        }
+      });
+
+      closePopupBtn.addEventListener("click", () => {
+        successPopup.classList.add("hidden");
+        successPopup.classList.remove("flex");
+      });
+
+      successPopup.addEventListener("click", (e) => {
+        if (e.target === successPopup) {
+          successPopup.classList.add("hidden");
+          successPopup.classList.remove("flex");
+        }
+      });
+    </script>
+
+    <script>
+      // use a script tag or an external JS file
+      document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils
+          .toArray([
+            ".sevicesAnimation",
+            ".reportsAnimation",
+            ".myReportsAnimation",
+            ".tendersAnimation",
+            ".feedbacksAnimation",
+            ".achievementsAnimation",
+          ])
+          .forEach((element) => {
+            gsap.fromTo(
+              element,
+              {
+                y: 100,
+                opacity: 0,
+              },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  once: true,
+                },
+              }
+            );
+          });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    
+<script>
+  $(document).ready(function () {
+  $("#saveData").off("click").on("click", function () {
+    var MedicineName = $("#MedicineName").val().trim();
+    var dosage = $("#dosage").val().trim();
+    var baEating = $("#baEating").val().trim();
+
+    const timeInputs = document.querySelectorAll('input[name="medicinetime[]"]');
+    let medtime = Array.from(timeInputs)
+      .map(input => input.value)
+      .filter(value => value !== '')
+      .join(', ');
+
+    // Clear old alerts
+    $("#alertContainer").html('');
+
+    if (MedicineName && dosage && baEating && medtime) {
+    const row = `
+  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+    <td class="px-6 py-4 dark:text-gray-300">${MedicineName}</td>
+    <td class="px-6 py-4 dark:text-gray-300">${dosage}</td>
+    <td class="px-6 py-4 dark:text-gray-300">${medtime}</td>
+    <td class="px-6 py-4 dark:text-gray-300">${baEating}</td>
+    <td class="px-6 py-4">
+      <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs delete-button">Delete</button>
+    </td>
+  </tr>`;
+      $("#tbod").append(row);
+
+      // Reset inputs
+      $("#MedicineName").val('');
+      $("#dosage").val('');
+      $("#baEating").val('');
+      $("input[name='medicinetime[]']").val('');
+
+      // Close modal (HTML <dialog>)
+      $("#addMedicationModal")[0].close();
+
+      // Show success alert
+  const successAlert = `
+  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 rounded-md text-sm max-w-md w-full sm:w-auto" role="alert">
+    ✅ Appointment added successfully!
+  </div>`;
+$("#alertContainer").html(successAlert);
+
+
+
+    } else {
+      // Show error alert
+  const errorAlert = `
+  <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 rounded-md text-sm max-w-md w-full sm:w-auto" role="alert">
+    ⚠️ Please fill in all the fields before saving.
+  </div>`;
+$("#alertContainer").html(errorAlert);
+
+
+    }
+
+    // Optional: Auto-hide alert after 3 sec
+    setTimeout(() => {
+      $("#alertContainer").html('');
+    }, 3000);
+  });
+});
+
+</script>
+
+
+<script>
+  function addTimeSelect() {
+  const container = document.getElementById("time-fields");
+
+  // أنشئ عنصر div جديد يحتوي على input
+  const newTimeField = document.createElement("div");
+  newTimeField.className = "mb-2";
+  newTimeField.innerHTML = `
+    <input type="time" name="medicinetime[]" class="w-full border rounded px-3 py-2 text-sm" />
+  `;
+
+  // أضف العنصر داخل container
+  container.appendChild(newTimeField);
+}
+
+
+</script>
+
+<script>
+   $(document).ready(function () {
+            $("#saveAppData").click(function () {
+                var appointmentName = $("#appointmentName").val();
+                var appointmentaddress=$("#appointmentaddress").val();
+                var appointmentdate=$("#appointmentdate").val();
+                var appointmenttime = $("#appointmenttime").val();
+
+
+if (appointmentName && appointmentaddress && appointmentdate && appointmenttime) {
+    
+  var row =` <div class="srv-box col-3">
+              <div class="card rad-10" style="width: 18rem;" >
+                <img class="card-img-top w-100" src="~/images/3634680.png" alt="Card image cap">
+                <div class="card-body">
+                        <ul>
+                            <li><h1>${appointmentName}</h1></li>
+                            <li><h5>${appointmentaddress}</h5></li>
+                            <li>
+                             <h6>${appointmentdate}</h6> 
+                            </li>
+                            <li><h6>${appointmenttime}</h6></li>
+                            <li>
+                                <button class="btn btn-danger" id="delRecode">Delete</button>
+                            </li>
+                </div>
+              </div>
+            </div>`
+    $("#cardBod").append(row);
+                    $("#appointmentName").val('');
+                    $("#appointmentaddress").val('');
+                    $("#appointmentdate").val('');
+                    $("#appointmenttime").val('');
+                    $('#exampleModal').modal('hide');
+                } 
+                else {
+                    alert("Please fill in all fields.");
+                }
+                
+                  var alertMessagee = `<div class="alert alert-danger mt-3" role="alert">
+                                      Medicine added Sucessfully!
+                                    </div>`;
+             $("#alertAppContainer").append(alertMessagee);
+            });
+        });
+      $(document).on("click", ".delete-button", function () {
+  $(this).closest("tr").remove();
+});
+
+        function toggleSection(section) {
+  section.classList.toggle("open");
+}
+function toggleTip(event, btn) {
+  event.stopPropagation(); 
+
+  const content = btn.nextElementSibling;
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    btn.textContent = btn.textContent.replace("➖", "➕");
+  } else {
+    content.style.display = "block";
+    btn.textContent = btn.textContent.replace("➕", "➖");
+  }
+}
+
+
+</script>
+  <script>
+    function readPage() {
+      const text = document.body.innerText; // Get all visible text
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.cancel(); // Stop any current speech
+      speechSynthesis.speak(utterance); // Speak it
+    }
+  </script>
+  <script>
+  const toggleButton = document.getElementById('darkModeToggle');
+  const body = document.body;
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('bg-light');
+    body.classList.toggle('text-dark');
+    body.classList.toggle('bg-dark');
+    body.classList.toggle('text-light');
+
+    // Optional: change button text/icon
+    if (body.classList.contains('bg-dark')) {
+      // toggleButton.textContent = '☀️ Light Mode';
+      toggleButton.classList.remove('btn-outline-secondary');
+      toggleButton.classList.add('btn-outline-light');
+    } else {
+      // toggleButton.textContent = '🌙 Dark Mode';
+      toggleButton.classList.remove('btn-outline-light');
+      toggleButton.classList.add('btn-outline-secondary');
+    }
+  });
+  function logout() {
+     window.location.href = "login.html";
+    }
+</script>
+<script>
+  function openImageOptions() {
+    // Trigger the hidden input
+    document.getElementById('qrInput').click();
+  }
+
+  function handleImage(input) {
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+
+      // You can now use this image file for your QR code scanner or preview
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        console.log("Image uploaded or captured:", e.target.result);
+        // You can process it here or show it in an <img> tag
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+</script>
+<script>
+  function saveAppointment() {
+    const nameInput = document.getElementById("appointmentName");
+    const addressInput = document.getElementById("appointmentAddress");
+    const dateInput = document.getElementById("appointmentDate");
+    const timeInput = document.getElementById("appointmentTime");
+
+    const errName = document.getElementById("errName");
+    const errAddress = document.getElementById("errAddress");
+    const errDate = document.getElementById("errDate");
+    const errTime = document.getElementById("errTime");
+
+    let valid = true;
+
+    // name
+    if (nameInput.value.trim() === "") {
+      nameInput.classList.add("border-red-500");
+      errName.classList.remove("hidden");
+      valid = false;
+    } else {
+      nameInput.classList.remove("border-red-500");
+      errName.classList.add("hidden");
+    }
+
+    // address
+    if (addressInput.value.trim() === "") {
+      addressInput.classList.add("border-red-500");
+      errAddress.classList.remove("hidden");
+      valid = false;
+    } else {
+      addressInput.classList.remove("border-red-500");
+      errAddress.classList.add("hidden");
+    }
+
+    // date
+    if (dateInput.value === "") {
+      dateInput.classList.add("border-red-500");
+      errDate.classList.remove("hidden");
+      valid = false;
+    } else {
+      dateInput.classList.remove("border-red-500");
+      errDate.classList.add("hidden");
+    }
+
+    // time
+    if (timeInput.value === "") {
+      timeInput.classList.add("border-red-500");
+      errTime.classList.remove("hidden");
+      valid = false;
+    } else {
+      timeInput.classList.remove("border-red-500");
+      errTime.classList.add("hidden");
+    }
+
+    if (!valid) return;
+
+    // إذا البيانات كاملة:
+    const cardHTML = `
+      <div class="min-w-[300px] bg-white rounded-xl shadow-md p-4 flex-shrink-0">
+        <img src="~/images/3634680.png" alt="Card image" class="w-full h-32 object-cover rounded-md mb-4" />
+        <ul class="space-y-1 text-sm">
+          <li><h1 class="text-xl font-semibold">${nameInput.value}</h1></li>
+          <li><h5 class="text-gray-600">${addressInput.value}</h5></li>
+          <li><h6 class="text-gray-500">${dateInput.value}</h6></li>
+          <li><h6 class="text-gray-500">${timeInput.value}</h6></li>
+          <li>
+            <button onclick="this.closest('div').remove()"
+              class="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded mt-2">
+              Delete
+            </button>
+          </li>
+        </ul>
+      </div>
+    `;
+
+    document.getElementById("cardBod").insertAdjacentHTML("beforeend", cardHTML);
+    document.getElementById("appointmentModal").close();
+
+    // تنظيف الحقول
+    nameInput.value = "";
+    addressInput.value = "";
+    dateInput.value = "";
+    timeInput.value = "";
+  }
+</script>
+<script>
+  const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+</script>
+  <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Dropdown functionality
+        function toggleDropdown() {
+            const dropdown = document.getElementById('categoryDropdown');
+            dropdown.classList.toggle('open');
+        }
+
+        function closeDropdown() {
+            const dropdown = document.getElementById('categoryDropdown');
+            dropdown.classList.remove('open');
+        }
+
+        function selectCategory(event, categoryName, categoryValue) {
+            event.preventDefault();
+            
+            // Update button text
+            document.getElementById('selectedCategory').textContent = categoryName;
+            document.getElementById('currentCategory').textContent = categoryName;
+            
+            // Update active state
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.closest('.dropdown-item').classList.add('active');
+            
+            // Close dropdown
+            closeDropdown();
+            
+            // If it's not "All Categories", you can navigate to the page
+            if (categoryValue !== 'all') {
+                const href = event.target.closest('.dropdown-item').getAttribute('href');
+                if (href && href !== '#') {
+                    // Uncomment the next line if you want to navigate immediately
+                    // window.location.href = href;
+                    console.log('Would navigate to:', href);
+                }
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('categoryDropdown');
+            if (!dropdown.contains(event.target)) {
+                closeDropdown();
+            }
+        });
+
+        // Handle keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDropdown();
+            }
+        });
+    </script>
+    <!-- New -->
+    <script>
+  const profileButton = document.getElementById('profileButton');
+  if (profileButton) {
+    profileButton.addEventListener('click', () => {
+      console.log('Profile clicked');
+    });
+  }
+</script>
+        
+  </body>
+</html>
+

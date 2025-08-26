@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/mystyles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* أفقي */
+            align-items: center; /* عمودي */
+            height: 100vh; /* يخلي الطول كامل الشاشة */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- الكارد -->
+    <a asp-controller="Health" asp-action="Page2">
+        <!-- your card markup -->
+    
+
+        <div class="cardh">
+            <span class="card-title">Click here for Wholesome Eats</span>
+            <div class="card__content">
+                <p class="card__title">
+                    Better Plate Hub
+                </p><p class="card__description">Discover healthy recipes, smart ingredient swaps, and tips for better eating. Your go-to place for delicious, nutritious choices tailored to your lifestyle</p>
+            </div>
+        </div>
+    </a>
+</body>
+</html>

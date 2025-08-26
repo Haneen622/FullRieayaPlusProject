@@ -1,0 +1,119 @@
+﻿@model AdvSwProject.Models.User
+@{
+    Layout = null;                 
+   
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help • Tutorial</title>
+    <script src="https://cdn.tailwindcss.com">
+        // Toggle inline PDF preview
+        const toggleBtn = document.getElementById('toggleInline');
+        const inlineWrap = document.getElementById('inlineWrap');
+        if (toggleBtn && inlineWrap) {
+          toggleBtn.addEventListener('click', () => {
+            inlineWrap.classList.toggle('hidden');
+            toggleBtn.textContent = inlineWrap.classList.contains('hidden') ? 'Open Inline Preview' : 'Hide Inline Preview';
+          });
+        }
+
+        // Simple accordion for the outline
+        document.querySelectorAll('.acc-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const panel = btn.nextElementSibling;
+            panel.classList.toggle('hidden');
+          });
+        });
+    </script>
+    <meta name="color-scheme" content="light dark" />
+    <style>
+        @@keyframes fadeIn { from { opacity:0; transform: translateY(-10px);} to { opacity:1; transform: translateY(0);} }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-[#7BCDF0] to-[#5fb8db] min-h-screen flex items-center justify-center p-4">
+    <!-- Card -->
+    <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full p-6 sm:p-8 transition-all duration-300 animate-fade-in">
+        <!-- Back button -->
+        <a href="index.html" class="absolute left-4 top-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#7BCDF0] hover:bg-[#65b9de] text-white shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7BCDF0]" aria-label="Back to home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            Back
+        </a>
+
+        <header class="text-center mb-6">
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0f3a4a] dark:text-white">Help & Tutorial</h1>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">Watch this short walkthrough and read the manual to learn how to use the website.</p>
+        </header>
+
+        <!-- Video block -->
+        <figure class="space-y-3 mb-8">
+            <div class="relative rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-lg bg-black">
+                <video id="siteTutorial" class="w-full h-auto" controls playsinline poster="media/tutorial-poster.jpg">
+                    <source src="~/images/tutorial.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Play overlay -->
+                <button id="overlayPlay" class="absolute inset-0 grid place-items-center group" aria-label="Play video">
+                    <span class="rounded-full p-5 bg-white/80 backdrop-blur-md shadow-lg border border-white/70 transition group-hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#0f3a4a]" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                    </span>
+                </button>
+            </div>
+            <figcaption class="text-center text-gray-700 dark:text-gray-300 text-base">
+                <span class="font-semibold">Website Walkthrough:</span>
+                From signing in and browsing pages to using the key features step‑by‑step.
+            </figcaption>
+        </figure>
+
+        <!-- User Manual Section -->
+        <section id="user-manual" class="mt-10">
+            <header class="mb-4 text-center">
+                <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-[#0f3a4a] dark:text-white">User Manual</h2>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">Read the full guide for features, tips, and troubleshooting.</p>
+            </header>
+
+            <!-- Action buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+                <a href="~/images/um.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#7BCDF0] hover:bg-[#65b9de] text-white shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7BCDF0]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V7.414A2 2 0 0017.414 6L12 0.586A2 2 0 0010.586 0H4z" /></svg>
+                    View PDF
+                </a>
+                <a href="~/images/um.pdf" download class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-[#0f3a4a] border border-[#7BCDF0] hover:bg-[#7BCDF0]/10 shadow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M3 14a1 1 0 011-1h3V3a1 1 0 112 0v10h3a1 1 0 011 1v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1z" /><path d="M7 11l3 3 3-3H7z" /></svg>
+                    Download PDF
+                </a>
+                <button id="toggleInline" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 border border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" /></svg>
+                    Open Inline Preview
+                </button>
+            </div>
+
+            <!-- Inline PDF preview (optional) -->
+            <div id="inlineWrap" class="hidden rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-lg bg-white dark:bg-gray-900">
+                <!-- Replace src with your real PDF path: docs/user-manual.pdf -->
+                <iframe src="docs/user-manual.pdf#view=FitH" title="User Manual" class="w-full" style="height: 70vh;"></iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+        }
+
+        const video = document.getElementById('siteTutorial');
+        const overlay = document.getElementById('overlayPlay');
+        const hideOverlay = () => overlay.classList.add('hidden');
+        const showOverlay = () => overlay.classList.remove('hidden');
+        overlay.addEventListener('click', () => { hideOverlay(); video.play(); });
+        video.addEventListener('play', hideOverlay);
+        video.addEventListener('pause', showOverlay);
+        video.addEventListener('ended', showOverlay);
+    </script>
+</body>
+</html>

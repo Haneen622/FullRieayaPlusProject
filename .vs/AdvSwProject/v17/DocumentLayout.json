@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\controller\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\controller\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\views\\home\\athkari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\views\\home\\athkari.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\views\\home\\duaa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\views\\home\\duaa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\views\\home\\altheker.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\views\\home\\altheker.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\views\\home\\tutorial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\views\\home\\tutorial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\views\\profile\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\views\\profile\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|c:\\users\\cw\\source\\repos\\advswproject\\advswproject\\controller\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{101CC767-633C-4290-B653-D261ED2BF05D}|AdvSwProject\\AdvSwProject.csproj|solutionrelative:advswproject\\controller\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Controller\\HomeController.cs",
+              "RelativeDocumentMoniker": "AdvSwProject\\Controller\\HomeController.cs",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Controller\\HomeController.cs",
+              "RelativeToolTip": "AdvSwProject\\Controller\\HomeController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAABAwCwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T06:22:04.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Athkari.cshtml",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\Athkari.cshtml",
+              "RelativeDocumentMoniker": "AdvSwProject\\Views\\Home\\Athkari.cshtml",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\Athkari.cshtml",
+              "RelativeToolTip": "AdvSwProject\\Views\\Home\\Athkari.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T06:21:09.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "altheker.cshtml",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\altheker.cshtml",
+              "RelativeDocumentMoniker": "AdvSwProject\\Views\\Home\\altheker.cshtml",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\altheker.cshtml",
+              "RelativeToolTip": "AdvSwProject\\Views\\Home\\altheker.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T06:20:53.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "duaa.cshtml",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\duaa.cshtml",
+              "RelativeDocumentMoniker": "AdvSwProject\\Views\\Home\\duaa.cshtml",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\duaa.cshtml",
+              "RelativeToolTip": "AdvSwProject\\Views\\Home\\duaa.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T06:20:49.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Tutorial.cshtml",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\Tutorial.cshtml",
+              "RelativeDocumentMoniker": "AdvSwProject\\Views\\Home\\Tutorial.cshtml",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\Tutorial.cshtml",
+              "RelativeToolTip": "AdvSwProject\\Views\\Home\\Tutorial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-23T20:56:35.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AdvSwProject\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AdvSwProject\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAI0BAAAAAAAAAAAvwI4BAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-23T20:46:14.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Controller\\ProfileController.cs",
+              "RelativeDocumentMoniker": "AdvSwProject\\Controller\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Controller\\ProfileController.cs",
+              "RelativeToolTip": "AdvSwProject\\Controller\\ProfileController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwIwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:44:59.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Profile\\Details.cshtml",
+              "RelativeDocumentMoniker": "AdvSwProject\\Views\\Profile\\Details.cshtml",
+              "ToolTip": "C:\\Users\\CW\\source\\repos\\AdvSwProject\\AdvSwProject\\Views\\Profile\\Details.cshtml",
+              "RelativeToolTip": "AdvSwProject\\Views\\Profile\\Details.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEMAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-23T10:41:07.112Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
